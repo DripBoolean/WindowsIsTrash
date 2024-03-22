@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dt7a5qg3a880o"]
+
+[ext_resource type="Script" path="res://scenes/player_and_parts/player.gd" id="1_7liyd"]
+
+[node name="Player" type="Node3D"]
+script = ExtResource("1_7liyd")
+
+[node name="Camera" type="Camera3D" parent="."]
+
+[node name="CollisionShape" type="CollisionShape3D" parent="."]
