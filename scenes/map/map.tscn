@@ -4,6 +4,7 @@
 
 [node name="map" type="Node3D"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.539684, 0)
-mesh = SubResource("BoxMesh_7sxjb")
+[node name="floor" type="CSGCombiner3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="floor"]
+size = Vector3(76, 0.45, 75)
