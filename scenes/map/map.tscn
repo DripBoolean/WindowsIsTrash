@@ -3,3 +3,6 @@
 [node name="map" type="Node3D"]
 
 [node name="floor" type="CSGCombiner3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="floor"]
+size = Vector3(76, 0.45, 75)
