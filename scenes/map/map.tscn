@@ -1,3 +1,5 @@
 [gd_scene format=3 uid="uid://cew1d7u8o5yka"]
 
 [node name="map" type="Node3D"]
+
+[node name="floor" type="CSGCombiner3D" parent="."]
