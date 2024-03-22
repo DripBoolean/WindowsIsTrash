@@ -1,16 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://cew1d7u8o5yka"]
+[gd_scene load_steps=5 format=3 uid="uid://cew1d7u8o5yka"]
 
 [ext_resource type="Texture2D" uid="uid://ca2pk2qugckdq" path="res://textures/orangegrid.png" id="1_2dnaw"]
+[ext_resource type="Texture2D" uid="uid://cdgsgobxbi03e" path="res://textures/greengrid.png" id="2_gf0y6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xd03u"]
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("1_2dnaw")
 uv1_triplanar = true
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wnyix"]
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("2_gf0y6")
+uv1_triplanar = true
+
 [node name="map" type="Node3D"]
 
 [node name="floor" type="CSGCombiner3D" parent="."]
 
-[node name="CSGBox3D" type="CSGBox3D" parent="floor"]
-size = Vector3(76, 0.45, 75)
+[node name="floor_001" type="CSGBox3D" parent="floor"]
+size = Vector3(100, 0.45, 100)
 material = SubResource("StandardMaterial3D_xd03u")
+
+[node name="wall_001" type="CSGBox3D" parent="floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46, 0.73, -30)
+size = Vector3(1, 1, 40)
+material = SubResource("StandardMaterial3D_wnyix")

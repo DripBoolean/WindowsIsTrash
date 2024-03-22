@@ -1,10 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://dsgirsgpchqrr"]
+[gd_scene load_steps=3 format=3 uid="uid://dg7t2gpulcgae"]
 
 [ext_resource type="PackedScene" uid="uid://cew1d7u8o5yka" path="res://scenes/map/map.tscn" id="1_fhuy1"]
-[ext_resource type="PackedScene" uid="uid://dt7a5qg3a880o" path="res://scenes/player_and_parts/player.tscn" id="2_5o4qg"]
+[ext_resource type="PackedScene" path="res://scenes/player_and_parts/player.tscn" id="2_5o4qg"]
 
 [node name="Main" type="Node3D"]
 
 [node name="map" parent="." instance=ExtResource("1_fhuy1")]
 
 [node name="Player" parent="." instance=ExtResource("2_5o4qg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.16327, 22.1264)
