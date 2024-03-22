@@ -1,10 +1,12 @@
-extends Node3D
+extends CharacterBody3D
 
 var camera_rotation = Vector2(0, 0)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	velocity = Vector3(10, 0, 0).rotated(Vector3(0, 1, 0), camera_rotation.x + PI / 2)
+	move_and_slide()
+	
 
 func _input(event):
 	if event is InputEventMouseMotion:
@@ -13,4 +15,5 @@ func _input(event):
 		$Camera.transform.basis = Basis() # reset rotation
 		$Camera.rotate_object_local(Vector3(0, 1, 0), camera_rotation.x)
 		$Camera.rotate_object_local(Vector3(1, 0, 0), camera_rotation.y)
+	
 		
