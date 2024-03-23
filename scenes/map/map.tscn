@@ -79,3 +79,31 @@ material = SubResource("StandardMaterial3D_wnyix")
 transform = Transform3D(-4.37114e-08, 0, 0.545281, 0, 1, 0, -1, 0, -2.3835e-08, 2, 1.73, 27.5)
 size = Vector3(1, 4, 175)
 material = SubResource("StandardMaterial3D_wnyix")
+
+[node name="wall_007" type="CSGBox3D" parent="wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 1.73, 39)
+size = Vector3(1, 4, 22)
+material = SubResource("StandardMaterial3D_wnyix")
+
+[node name="wall_hole_001" type="CSGBox3D" parent="wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 1, 39)
+operation = 2
+snap = 1e-06
+size = Vector3(2, 4, 4)
+
+[node name="wall_008" type="CSGBox3D" parent="wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1.73, 39)
+size = Vector3(1, 4, 22)
+material = SubResource("StandardMaterial3D_wnyix")
+
+[node name="wall_hole_002" type="CSGBox3D" parent="wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1, 39)
+operation = 2
+snap = 1e-06
+size = Vector3(2, 4, 4)
+
+[node name="wall_hole_003" type="CSGBox3D" parent="wall"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, 1, 27)
+operation = 2
+snap = 1e-06
+size = Vector3(3, 4, 6)
