@@ -72,10 +72,8 @@ func _headbob(time) -> Vector3:
 	
 func shoot():
 	var new_projectile = projectile_scene.instantiate()
-	new_projectile.velocity = -camera.get_global_transform().basis.z * PROJECTILE_SPEED
-	print(camera.get_global_transform().basis.z)
+	new_projectile.linear_velocity = -camera.get_global_transform().basis.z * PROJECTILE_SPEED
 	new_projectile.position = camera.global_position
-	print(camera.global_position)
 	$"../".add_child(new_projectile)
 	
 
