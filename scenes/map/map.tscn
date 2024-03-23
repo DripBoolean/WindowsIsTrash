@@ -107,3 +107,45 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, 1,
 operation = 2
 snap = 1e-06
 size = Vector3(3, 4, 6)
+
+[node name="wall_009" type="CSGBox3D" parent="wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.2053, 1.73, 4.80857)
+size = Vector3(1, 4, 30)
+material = SubResource("StandardMaterial3D_wnyix")
+
+[node name="wall_010" type="CSGBox3D" parent="wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.71328, 1.73, 4.80857)
+size = Vector3(1, 4, 30)
+material = SubResource("StandardMaterial3D_wnyix")
+
+[node name="wall_011" type="CSGBox3D" parent="wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.25301, 1.73, 4.80857)
+size = Vector3(1, 4, 30)
+material = SubResource("StandardMaterial3D_wnyix")
+
+[node name="wall_hole_004" type="CSGBox3D" parent="wall"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -15.2461, 1, -10.6991)
+operation = 2
+snap = 1e-06
+size = Vector3(3, 4, 6)
+
+[node name="wall_012" type="CSGBox3D" parent="wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.25301, 1.73, -30.1914)
+size = Vector3(1, 4, 39.5)
+material = SubResource("StandardMaterial3D_wnyix")
+
+[node name="wall_hole_005" type="CSGBox3D" parent="wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 3, -30.699)
+operation = 2
+snap = 1e-06
+size = Vector3(3, 2, 12)
+
+[node name="wall_hole_006" type="CSGBox3D" parent="wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46, 3, -17.699)
+operation = 2
+snap = 1e-06
+size = Vector3(3, 2, 12)
+
+[node name="ramp_001" type="CSGPolygon3D" parent="wall"]
+transform = Transform3D(2.9552, 0, 0, 0, 2, 0, 0, 0, 12.7, -43, 0, -11)
+polygon = PackedVector2Array(-1, 0, -1, 1, 0, 1, 1, 0)
