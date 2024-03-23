@@ -1,7 +1,5 @@
-extends Node3D
-
-var velocity = Vector2(0, 0)
+extends RigidBody3D
 
 func _process(delta):
-	position += velocity * delta
+	pass
 	
