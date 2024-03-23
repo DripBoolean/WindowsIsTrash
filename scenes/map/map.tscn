@@ -56,8 +56,8 @@ size = Vector3(1, 4, 40)
 material = SubResource("StandardMaterial3D_wnyix")
 
 [node name="wall_002" type="CSGBox3D" parent="wall"]
-transform = Transform3D(-4.37114e-08, 0, 0.545281, 0, 1, 0, -1, 0, -2.3835e-08, -41, 1.73, -10.5)
-size = Vector3(1, 4, 20)
+transform = Transform3D(-4.37114e-08, 0, 4.68178, 0, 1, 0, -1, 0, -2.04647e-07, 2, 1.73, -10.5)
+size = Vector3(1, 4, 20.5)
 material = SubResource("StandardMaterial3D_wnyix")
 
 [node name="wall_003" type="CSGBox3D" parent="wall"]
