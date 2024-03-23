@@ -15,6 +15,9 @@ uv1_triplanar = true
 
 [node name="map" type="Node3D"]
 
+[node name="stupid_and_dumb" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.877632, 0.479335, 0, -0.479335, 0.877632, -41.7125, 6.29294, -7.33817)
+
 [node name="floor" type="CSGCombiner3D" parent="." groups=["floor"]]
 use_collision = true
 
@@ -28,4 +31,9 @@ use_collision = true
 [node name="wall_001" type="CSGBox3D" parent="wall"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46, 0.73, -30)
 size = Vector3(1, 1, 40)
+material = SubResource("StandardMaterial3D_wnyix")
+
+[node name="wall_002" type="CSGBox3D" parent="wall"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -36, 0.73, -10.5)
+size = Vector3(1, 1, 20)
 material = SubResource("StandardMaterial3D_wnyix")
