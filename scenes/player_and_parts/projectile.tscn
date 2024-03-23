@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://sb7l73rmbnhl"]
+
+[ext_resource type="Script" path="res://scenes/player_and_parts/projectile.gd" id="1_774xy"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_a4ub0"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_nn3um"]
+
+[node name="Projectile" type="Area3D"]
+script = ExtResource("1_774xy")
+
+[node name="CollisionShape" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_a4ub0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_nn3um")

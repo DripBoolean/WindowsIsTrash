@@ -6,10 +6,14 @@ const SPEED = 5.0
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 const SENSITIVITY = 0.005
 
+const PROJECTILE_SPEED = 20.0
+
 # Head bob effect
 const BOB_FREQ = 2.4
 const BOB_AMP = 0.2
 var t_bob = 0.0
+
+var projectile_scene = preload("res://scenes/player_and_parts/projectile.tscn")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -51,6 +55,9 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 		
+	if(Input.is_action_just_pressed("shoot")):
+		shoot()
+		
 	#Head bob
 	#t_bob *= delta * velocity.length() * float(is_on_floor())
 	#camera.transform.origin = _headbob(t_bob)
@@ -62,6 +69,15 @@ func _headbob(time) -> Vector3:
 	pos.y = sin(time * BOB_FREQ) * BOB_AMP
 	pos.x = cos(time * BOB_FREQ/2)
 	return pos
+	
+func shoot():
+	var new_projectile = projectile_scene.instantiate()
+	new_projectile.velocity = -camera.get_global_transform().basis.z * PROJECTILE_SPEED
+	print(camera.get_global_transform().basis.z)
+	new_projectile.position = camera.global_position
+	print(camera.global_position)
+	$"../".add_child(new_projectile)
+	
 
 #func _input(event):
 	#if event is InputEventMouseMotion:
