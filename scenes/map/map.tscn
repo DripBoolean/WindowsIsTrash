@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cew1d7u8o5yka"]
+[gd_scene load_steps=7 format=3 uid="uid://cew1d7u8o5yka"]
 
 [ext_resource type="Texture2D" uid="uid://ca2pk2qugckdq" path="res://textures/orangegrid.png" id="1_2dnaw"]
 [ext_resource type="PackedScene" uid="uid://5dfl7lvsdin7" path="res://models/stairs.tscn" id="1_j35d7"]
+[ext_resource type="PackedScene" uid="uid://dvpmbsf2cbnrc" path="res://models/glass_base.tscn" id="1_vrxwk"]
 [ext_resource type="Texture2D" uid="uid://cdgsgobxbi03e" path="res://textures/greengrid.png" id="2_gf0y6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xd03u"]
@@ -20,6 +21,9 @@ uv1_triplanar = true
 
 [node name="stupid_and_dumb" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.877632, 0.479335, 0, -0.479335, 0.877632, -41.7125, 6.29294, -7.33817)
+
+[node name="glass_base" parent="." instance=ExtResource("1_vrxwk")]
+transform = Transform3D(1.51584, 0, 0, 0, 1, 0, 0, 0, 2.23301, -46.1737, 2.7089, -17.3388)
 
 [node name="stairs" parent="." instance=ExtResource("1_j35d7")]
 transform = Transform3D(3.36979, 0, 0, 0, 1, 0, 0, 0, 0.920613, -48.0522, 0.411691, -46.892)

@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2oa2ituysld1"]
+
+[ext_resource type="PackedScene" uid="uid://8n7florwjwa8" path="res://models/glass_broken.glb" id="1_w6qck"]
+
+[node name="glass_broken" instance=ExtResource("1_w6qck")]

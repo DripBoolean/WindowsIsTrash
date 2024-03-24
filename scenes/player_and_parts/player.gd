@@ -114,6 +114,9 @@ func shoot():
 	new_projectile.position = $Head/hand/gun/gun_hole.global_position
 	$"../".add_child(new_projectile)
 	
+func take_damage():
+	print("MEWOUCH")
+	
 
 #func _input(event):
 	#if event is InputEventMouseMotion:
