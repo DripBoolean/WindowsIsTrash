@@ -22,6 +22,7 @@ var projectile_scene = preload("res://scenes/player_and_parts/projectile.tscn")
 	
 @onready var head = $Head
 @onready var camera = $Head/Camera
+@onready var guncam = $Head/Camera/gun/SubViewportContainer/SubViewport/GunCam
 	
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -31,6 +32,9 @@ func _unhandled_input(event):
 		head.rotate_y(-event.relative.x * SENSITIVITY)
 		camera.rotate_x(-event.relative.y * SENSITIVITY)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-40), deg_to_rad(60))
+		
+func _process(delta):
+	guncam.global_transform = camera.global_transform
 		
 @onready var init_seperation_ray_dist = abs($step_up_ray.position.z)
 func rotate_step_up_ray():
@@ -101,7 +105,7 @@ func _walk_down_stairs_check():
 func shoot():
 	var new_projectile = projectile_scene.instantiate()
 	new_projectile.linear_velocity = -camera.get_global_transform().basis.z * PROJECTILE_SPEED
-	new_projectile.position = camera.global_position
+	new_projectile.position = $Head/Camera/gun/gun_hole.global_position
 	$"../".add_child(new_projectile)
 	
 

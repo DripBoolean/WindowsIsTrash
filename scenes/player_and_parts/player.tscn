@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://clpc2ycnliho2"]
+[gd_scene load_steps=6 format=3 uid="uid://clpc2ycnliho2"]
 
 [ext_resource type="Script" path="res://scenes/player_and_parts/player.gd" id="1_7liyd"]
 
@@ -8,6 +8,8 @@ length = 0.5
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_j70ui"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1c4wl"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_stxqp"]
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.47065, 0)
@@ -28,7 +30,33 @@ shape = SubResource("CapsuleShape3D_1c4wl")
 [node name="Head" type="Node3D" parent="."]
 
 [node name="Camera" type="Camera3D" parent="Head"]
+cull_mask = 1048573
 current = true
+
+[node name="gun" type="MeshInstance3D" parent="Head/Camera"]
+transform = Transform3D(-0.227282, 0, 0, 0, 0.22736, 0, 0, 0, 1, 0.0219934, -0.330531, -0.70447)
+layers = 2
+mesh = SubResource("BoxMesh_stxqp")
+skeleton = NodePath("../../..")
+
+[node name="gun_hole" type="Node3D" parent="Head/Camera/gun"]
+transform = Transform3D(-4.39982, 0, 0, 0, 4.39832, 0, 0, 0, 1, 0.026573, 0.00149441, -0.4982)
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Head/Camera/gun"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="Head/Camera/gun/SubViewportContainer"]
+transparent_bg = true
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="GunCam" type="Camera3D" parent="Head/Camera/gun/SubViewportContainer/SubViewport"]
+cull_mask = 2
+fov = 90.0
 
 [node name="stair_check" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.40981, 0)
