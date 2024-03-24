@@ -1,13 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://clpc2ycnliho2"]
+[gd_scene load_steps=5 format=3 uid="uid://clpc2ycnliho2"]
 
 [ext_resource type="Script" path="res://scenes/player_and_parts/player.gd" id="1_7liyd"]
+
+[sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_ngvsw"]
+length = 0.5
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_j70ui"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1c4wl"]
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.47065, 0)
 script = ExtResource("1_7liyd")
+
+[node name="step_up_ray" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.957785, -0.66486)
+shape = SubResource("SeparationRayShape3D_ngvsw")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.482766, 0)
@@ -21,3 +29,7 @@ shape = SubResource("CapsuleShape3D_1c4wl")
 
 [node name="Camera" type="Camera3D" parent="Head"]
 current = true
+
+[node name="stair_check" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.40981, 0)
+target_position = Vector3(0, -0.55, 0)

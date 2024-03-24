@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://5dfl7lvsdin7"]
+
+[ext_resource type="Texture2D" uid="uid://ca2pk2qugckdq" path="res://textures/orangegrid.png" id="1_btamf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b2idp"]
+albedo_texture = ExtResource("1_btamf")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[node name="stairs" type="Node3D"]
+
+[node name="staircase" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="staircase"]
+transform = Transform3D(1, 0, 0, 0, 0.415168, 0, 0, 0, 5.91679, 0, 0, -0.17)
+material = SubResource("StandardMaterial3D_b2idp")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="staircase"]
+transform = Transform3D(1, 0, 0, 0, 0.415168, 0, 0, 0, 5.25599, 0, 0.415, -0.5)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="staircase"]
+transform = Transform3D(1, 0, 0, 0, 0.415168, 0, 0, 0, 4.62527, 0, 0.83, -0.815)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="staircase"]
+transform = Transform3D(1, 0, 0, 0, 0.415168, 0, 0, 0, 3.99623, 0, 1.242, -1.13)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="staircase"]
+transform = Transform3D(1, 0, 0, 0, 0.415168, 0, 0, 0, 3.35076, 0, 1.65418, -1.454)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="staircase"]
+transform = Transform3D(1, 0, 0, 0, 0.415168, 0, 0, 0, 2.72184, 0, 2.061, -1.768)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="staircase"]
+transform = Transform3D(1, 0, 0, 0, 0.415168, 0, 0, 0, 2.13384, 0, 2.4704, -2.06427)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="staircase"]
+transform = Transform3D(1, 0, 0, 0, 0.415168, 0, 0, 0, 1.6029, 0, 2.876, -2.329)

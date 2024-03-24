@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cew1d7u8o5yka"]
+[gd_scene load_steps=6 format=3 uid="uid://cew1d7u8o5yka"]
 
 [ext_resource type="Texture2D" uid="uid://ca2pk2qugckdq" path="res://textures/orangegrid.png" id="1_2dnaw"]
+[ext_resource type="PackedScene" uid="uid://5dfl7lvsdin7" path="res://models/stairs.tscn" id="1_j35d7"]
 [ext_resource type="Texture2D" uid="uid://cdgsgobxbi03e" path="res://textures/greengrid.png" id="2_gf0y6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xd03u"]
@@ -20,12 +21,25 @@ uv1_triplanar = true
 [node name="stupid_and_dumb" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.877632, 0.479335, 0, -0.479335, 0.877632, -41.7125, 6.29294, -7.33817)
 
+[node name="stairs" parent="." instance=ExtResource("1_j35d7")]
+transform = Transform3D(3.36979, 0, 0, 0, 1, 0, 0, 0, 0.920613, -48.0522, 0.411691, -46.892)
+
 [node name="floor" type="CSGCombiner3D" parent="." groups=["floor"]]
 use_collision = true
 
 [node name="floor_001" type="CSGBox3D" parent="floor"]
 size = Vector3(100, 0.45, 100)
 material = SubResource("StandardMaterial3D_xd03u")
+
+[node name="floor_002" type="CSGBox3D" parent="floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.95, 0)
+size = Vector3(100, 0.45, 100)
+material = SubResource("StandardMaterial3D_xd03u")
+
+[node name="floor_remove_001" type="CSGBox3D" parent="floor"]
+transform = Transform3D(3.71597, 0, 0, 0, 1, 0, 0, 0, 5.61969, -47.893, 3.95, -47.4001)
+operation = 2
+size = Vector3(1, 1, 1.10693)
 
 [node name="wall" type="CSGCombiner3D" parent="." groups=["wall"]]
 use_collision = true
@@ -141,11 +155,11 @@ snap = 1e-06
 size = Vector3(3, 2, 12)
 
 [node name="wall_hole_006" type="CSGBox3D" parent="wall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46, 3, -17.699)
+transform = Transform3D(1, 0, 0, 0, 1.12443, 0, 0, 0, 1, -46, 2.58638, -17.699)
 operation = 2
 snap = 1e-06
 size = Vector3(3, 2, 12)
 
 [node name="ramp_001" type="CSGPolygon3D" parent="wall"]
-transform = Transform3D(2.9552, 0, 0, 0, 2, 0, 0, 0, 12.7, -43, 0, -11)
+transform = Transform3D(2.9552, 0, 0, 0, 1.45614, 0, 0, 0, 12.7, -42.6015, 0, -11)
 polygon = PackedVector2Array(-1, 0, -1, 1, 0, 1, 1, 0)

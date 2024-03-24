@@ -31,6 +31,13 @@ func _unhandled_input(event):
 		head.rotate_y(-event.relative.x * SENSITIVITY)
 		camera.rotate_x(-event.relative.y * SENSITIVITY)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-40), deg_to_rad(60))
+		
+@onready var init_seperation_ray_dist = abs($step_up_ray.position.z)
+func rotate_step_up_ray():
+	var xz_vel = velocity * Vector3(1, 0, 1)
+	var xz_ray_pos = xz_vel.normalized() * init_seperation_ray_dist
+	$step_up_ray.global_position.x = self.global_position.x + xz_ray_pos.x
+	$step_up_ray.global_position.z = self.global_position.z + xz_ray_pos.z
 	
 func _physics_process(delta):
 	# Add the gravity.
@@ -61,14 +68,35 @@ func _physics_process(delta):
 	#Head bob
 	#t_bob *= delta * velocity.length() * float(is_on_floor())
 	#camera.transform.origin = _headbob(t_bob)
-
+	
+	rotate_step_up_ray()
 	move_and_slide()
+	_walk_down_stairs_check()
 		
 func _headbob(time) -> Vector3:
 	var pos = Vector3.ZERO
 	pos.y = sin(time * BOB_FREQ) * BOB_AMP
 	pos.x = cos(time * BOB_FREQ/2)
 	return pos
+
+var was_on_floor_last_frame = false	
+var snapped_to_staris_last_frame = false
+func _walk_down_stairs_check():
+	var did_snap = false
+	if not is_on_floor() and velocity.y <= 0 and (was_on_floor_last_frame or snapped_to_staris_last_frame) and $stair_check.is_colliding():
+		var body_test_result = PhysicsTestMotionResult3D.new()
+		var params = PhysicsTestMotionParameters3D.new()
+		var max_step_down = -0.5
+		params.from = self.global_transform
+		params.motion = Vector3(0, max_step_down, 0)
+		if PhysicsServer3D.body_test_motion(self.get_rid(), params, body_test_result):
+			var translate_y = body_test_result.get_travel().y
+			self.position.y += translate_y
+			apply_floor_snap()
+			did_snap = true
+		
+	was_on_floor_last_frame = is_on_floor()
+	snapped_to_staris_last_frame = did_snap
 	
 func shoot():
 	var new_projectile = projectile_scene.instantiate()
