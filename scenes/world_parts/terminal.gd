@@ -12,7 +12,7 @@ func _ready():
 	$SpawnTimer.start()
 
 
-func _process(delta):
+func _process(_delta):
 	if linux_installed:
 		$Light.light_color = Color(0, 255, 0)
 	else:
