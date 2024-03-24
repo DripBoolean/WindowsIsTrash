@@ -19,3 +19,5 @@ shape = SubResource("BoxShape3D_n66yp")
 
 [node name="Light" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.605436, 0.649305, 0)
+shadow_enabled = true
+omni_range = 170.407
