@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dd2qlohuppov"]
+
+[ext_resource type="Script" path="res://scenes/world_parts/terminal.gd" id="1_qdrne"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_k33bq"]
+size = Vector3(1, 2, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n66yp"]
+size = Vector3(1, 2, 1)
+
+[node name="Terminal" type="StaticBody3D" groups=["activatable"]]
+script = ExtResource("1_qdrne")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="." groups=["activateable"]]
+mesh = SubResource("BoxMesh_k33bq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_n66yp")
+
+[node name="Light" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.605436, 0.649305, 0)

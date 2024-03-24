@@ -3,7 +3,7 @@ extends RigidBody3D
 var bounces = 0
 
 
-func _process(delta):
+func _process(_delta):
 	if self.get_contact_count() > 0:
 		bounces += 1
 	if bounces > 5:

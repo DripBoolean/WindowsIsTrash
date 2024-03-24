@@ -38,7 +38,7 @@ func _unhandled_input(event):
 		camera.rotate_x(-event.relative.y * SENSITIVITY)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-40), deg_to_rad(60))
 		
-func _process(delta):
+func _process(_delta):
 	guncam.global_transform = camera.global_transform
 	#hand.global_transform.origin = hand_loc.global_transform.origin
 	#hand.rotation.y = lerp_angle(hand.rotation.y, rotation.y, SWAY * delta)
@@ -84,7 +84,14 @@ func _physics_process(delta):
 	head.position = Vector3.ZERO
 	head.translate_object_local(headbob(t_bob) * velocity.length() * 0.01)
 	#camera.transform.origin = _headbob(t_bob)
-	print(head.position)
+	
+	if(Input.is_action_just_pressed("activate")):
+		if(activation_cast.is_colliding()):
+			print("Hit  Something")
+			var collider = activation_cast.get_collider()
+			if(collider.is_in_group("activatable")):
+				collider.activate()
+				print("Activated Something")
 	
 	rotate_step_up_ray()
 	move_and_slide()
