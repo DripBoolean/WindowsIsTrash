@@ -10,7 +10,8 @@ const PROJECTILE_SPEED = 20.0
 
 # Head bob effect
 const BOB_FREQ = 2.4
-const BOB_AMP = 0.2
+const BOB_VERTICAL_AMP = 2.0
+const BOB_HORIZONTAL_AMP = 1.0
 var t_bob = 0.0
 
 var projectile_scene = preload("res://scenes/player_and_parts/projectile.tscn")
@@ -19,6 +20,7 @@ var projectile_scene = preload("res://scenes/player_and_parts/projectile.tscn")
 @onready var head = $Head
 @onready var camera = $Head/Camera
 @onready var guncam = $Head/hand/gun/SubViewportContainer/SubViewport/GunCam
+@onready var activation_cast = $Head/Camera/ActivationCast
 
 # GUN SWAY
 @onready var hand_loc = $Head/hand_location
@@ -76,17 +78,22 @@ func _physics_process(delta):
 		shoot()
 		
 	#Head bob
-	#t_bob *= delta * velocity.length() * float(is_on_floor())
+	t_bob += delta * velocity.length()
+	if(not is_on_floor()):
+		t_bob = 0
+	head.position = Vector3.ZERO
+	head.translate_object_local(headbob(t_bob) * velocity.length() * 0.01)
 	#camera.transform.origin = _headbob(t_bob)
+	print(head.position)
 	
 	rotate_step_up_ray()
 	move_and_slide()
 	_walk_down_stairs_check()
 		
-func _headbob(time) -> Vector3:
+func headbob(time) -> Vector3:
 	var pos = Vector3.ZERO
-	pos.y = sin(time * BOB_FREQ) * BOB_AMP
-	pos.x = cos(time * BOB_FREQ/2)
+	pos.y = sin(time * BOB_FREQ) * BOB_VERTICAL_AMP
+	pos.x = sin(time * BOB_FREQ/2) * BOB_HORIZONTAL_AMP
 	return pos
 
 var was_on_floor_last_frame = false	

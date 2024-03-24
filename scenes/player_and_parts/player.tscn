@@ -34,6 +34,8 @@ shape = SubResource("CapsuleShape3D_1c4wl")
 cull_mask = 1048573
 current = true
 
+[node name="ActivationCast" type="RayCast3D" parent="Head/Camera"]
+
 [node name="hand" type="Node3D" parent="Head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.264178, -0.323513, -0.627645)
 script = ExtResource("2_cr2g4")
