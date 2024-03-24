@@ -14,7 +14,7 @@
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.8038, 1.76088, -12.7671)
 
 [node name="Enemy" parent="." instance=ExtResource("3_0ttrc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.1227, 5.32268, 5.92518)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.1227, 2.06787, 5.92518)
 
 [node name="enemy_malware" parent="." instance=ExtResource("4_s41y5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.64, 1.46784, 16.008)

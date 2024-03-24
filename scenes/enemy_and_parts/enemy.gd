@@ -6,9 +6,8 @@ var health = 3
 func _process(delta):
 	var player = get_tree().get_nodes_in_group("player")[0]
 	
-	var movement_direction = (player.global_position -global_position ).normalized()
-	
-	position += movement_direction * 0.02
+	var movement_direction = (player.global_transform.origin - global_transform.origin).normalized()
+	global_transform.origin += movement_direction * delta
 	
 	if health <= 0:
 		queue_free()
