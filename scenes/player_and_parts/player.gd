@@ -15,17 +15,20 @@ var t_bob = 0.0
 
 var projectile_scene = preload("res://scenes/player_and_parts/projectile.tscn")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-	#velocity = Vector3(10, 0, 0).rotated(Vector3(0, 1, 0), camera_rotation.x + PI / 2)
-	#move_and_slide()
 	
 @onready var head = $Head
 @onready var camera = $Head/Camera
-@onready var guncam = $Head/Camera/gun/SubViewportContainer/SubViewport/GunCam
+@onready var guncam = $Head/hand/gun/SubViewportContainer/SubViewport/GunCam
+
+# GUN SWAY
+@onready var hand_loc = $Head/hand_location
+@onready var hand = $Head/hand
+const SWAY = 30
+const VSWAY = 40
 	
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	#hand.set_as_top_level(true)
 	
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
@@ -35,6 +38,9 @@ func _unhandled_input(event):
 		
 func _process(delta):
 	guncam.global_transform = camera.global_transform
+	#hand.global_transform.origin = hand_loc.global_transform.origin
+	#hand.rotation.y = lerp_angle(hand.rotation.y, rotation.y, SWAY * delta)
+	#hand.rotation.x = lerp_angle(hand.rotation.x, head.rotation.x, VSWAY * delta)
 		
 @onready var init_seperation_ray_dist = abs($step_up_ray.position.z)
 func rotate_step_up_ray():
@@ -105,7 +111,7 @@ func _walk_down_stairs_check():
 func shoot():
 	var new_projectile = projectile_scene.instantiate()
 	new_projectile.linear_velocity = -camera.get_global_transform().basis.z * PROJECTILE_SPEED
-	new_projectile.position = $Head/Camera/gun/gun_hole.global_position
+	new_projectile.position = $Head/hand/gun/gun_hole.global_position
 	$"../".add_child(new_projectile)
 	
 

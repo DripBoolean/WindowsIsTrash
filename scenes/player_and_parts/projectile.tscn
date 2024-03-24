@@ -6,8 +6,11 @@
 bounce = 1.0
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_a4ub0"]
+radius = 0.3
 
 [sub_resource type="SphereMesh" id="SphereMesh_nn3um"]
+radius = 0.3
+height = 0.6
 
 [node name="Projectile" type="RigidBody3D"]
 physics_material_override = SubResource("PhysicsMaterial_570ac")
