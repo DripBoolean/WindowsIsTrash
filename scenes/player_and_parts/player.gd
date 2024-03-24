@@ -27,6 +27,9 @@ var projectile_scene = preload("res://scenes/player_and_parts/projectile.tscn")
 @onready var hand = $Head/hand
 const SWAY = 30
 const VSWAY = 40
+
+# HEALTH
+@export var health: float = 100.0
 	
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -129,6 +132,7 @@ func shoot():
 	$"../".add_child(new_projectile)
 	
 func take_damage():
+	health -= 10
 	print("MEWOUCH")
 	
 
