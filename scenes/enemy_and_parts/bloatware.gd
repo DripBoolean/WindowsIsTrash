@@ -12,6 +12,7 @@ var strafing_velocity = 0
 var target_strafing_velocity = 0
 var max_strafing_velocity = 5
 var attention = 10
+var health = 10
 
 func sees_player():
 	if los.is_colliding():
@@ -24,6 +25,10 @@ func sees_player():
 func _physics_process(delta):
 	var player = get_tree().get_first_node_in_group("player")
 	eyes.look_at(player.global_transform.origin, Vector3.UP)
+	
+	if health <= 0:
+		queue_free()
+		return
 	
 	if sees_player():
 		attention = 10
@@ -59,3 +64,7 @@ func _physics_process(delta):
 		strafing_velocity = move_toward(strafing_velocity, target_strafing_velocity, 15 * delta)
 		
 		move_and_collide(movement_direction * strafing_velocity * delta)
+		
+
+func take_damage():
+	health -= 1
