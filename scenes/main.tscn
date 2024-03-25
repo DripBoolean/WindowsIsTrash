@@ -1,14 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://dg7t2gpulcgae"]
+[gd_scene load_steps=8 format=3 uid="uid://dg7t2gpulcgae"]
 
 [ext_resource type="PackedScene" uid="uid://cew1d7u8o5yka" path="res://scenes/map/map.tscn" id="1_fhuy1"]
 [ext_resource type="PackedScene" uid="uid://clpc2ycnliho2" path="res://scenes/player_and_parts/player.tscn" id="2_5o4qg"]
 [ext_resource type="PackedScene" uid="uid://xkauhl0dd2pd" path="res://scenes/enemy_and_parts/enemy.tscn" id="3_0ttrc"]
 [ext_resource type="PackedScene" uid="uid://bllqcipxi408k" path="res://scenes/enemy_and_parts/enemy_malware.tscn" id="4_s41y5"]
 [ext_resource type="PackedScene" uid="uid://dd2qlohuppov" path="res://scenes/world_parts/terminal.tscn" id="5_ln038"]
+[ext_resource type="PackedScene" uid="uid://ism5xobilx0i" path="res://scenes/enemy_and_parts/bloatware.tscn" id="6_8sj02"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_ufqbo"]
 
 [node name="Main" type="Node3D"]
-
-[node name="map" parent="." instance=ExtResource("1_fhuy1")]
 
 [node name="Player" parent="." instance=ExtResource("2_5o4qg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.8038, 1.76088, -12.7671)
@@ -21,3 +22,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.64, 1.46784, 16.008)
 
 [node name="Terminal" parent="." instance=ExtResource("5_ln038")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -37.0246, 1.22381, 0)
+
+[node name="Bloatware" parent="." instance=ExtResource("6_8sj02")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.556, 1.41713, 4.50718)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_ufqbo")
+
+[node name="map" parent="NavigationRegion3D" instance=ExtResource("1_fhuy1")]
