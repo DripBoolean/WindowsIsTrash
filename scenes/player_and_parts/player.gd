@@ -35,7 +35,6 @@ const VSWAY = 40
 	
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	infect_adware()
 	#hand.set_as_top_level(true)
 	
 func _unhandled_input(event):
@@ -83,8 +82,7 @@ func _physics_process(delta):
 	
 	if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		if(Input.is_action_just_pressed("shoot")):
-			shoot()
-		
+			shoot()		
 	#Head bob
 	t_bob += delta * velocity.length()
 	if(not is_on_floor()):
