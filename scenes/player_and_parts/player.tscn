@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://clpc2ycnliho2"]
+[gd_scene load_steps=8 format=3 uid="uid://clpc2ycnliho2"]
 
 [ext_resource type="Script" path="res://scenes/player_and_parts/player.gd" id="1_7liyd"]
 [ext_resource type="Script" path="res://scenes/player_and_parts/hand.gd" id="2_cr2g4"]
+[ext_resource type="PackedScene" uid="uid://bbfo83ml3wkg7" path="res://scenes/player_and_parts/popup.tscn" id="3_ifvoj"]
 
 [sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_ngvsw"]
 length = 0.5
@@ -72,6 +73,8 @@ fov = 90.0
 
 [node name="hand_location" type="Node3D" parent="Head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.264178, -0.273342, -0.470594)
+
+[node name="Popup" parent="Head" instance=ExtResource("3_ifvoj")]
 
 [node name="stair_check" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.40981, 0)

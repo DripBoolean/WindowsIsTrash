@@ -29,11 +29,11 @@ func _physics_process(delta):
 		attention = 10
 		active = true
 	else:
-		attention -= delta
+		if active:
+			attention -= delta
 	
 	if attention < 0:
 		active = false
-		print("chilling out")
 
 	if active:
 		var relative_position = global_position - player.global_position

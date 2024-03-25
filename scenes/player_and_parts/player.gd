@@ -15,8 +15,10 @@ const BOB_HORIZONTAL_AMP = 1.0
 var t_bob = 0.0
 
 var projectile_scene = preload("res://scenes/player_and_parts/projectile.tscn")
+var popup_scene = preload("res://scenes/player_and_parts/popup.tscn")
 
-	
+var rng = RandomNumberGenerator.new()
+
 @onready var head = $Head
 @onready var camera = $Head/Camera
 @onready var guncam = $Head/hand/gun/SubViewportContainer/SubViewport/GunCam
@@ -33,13 +35,15 @@ const VSWAY = 40
 	
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	infect_adware()
 	#hand.set_as_top_level(true)
 	
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
-		head.rotate_y(-event.relative.x * SENSITIVITY)
-		camera.rotate_x(-event.relative.y * SENSITIVITY)
-		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-40), deg_to_rad(60))
+		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+			head.rotate_y(-event.relative.x * SENSITIVITY)
+			camera.rotate_x(-event.relative.y * SENSITIVITY)
+			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-40), deg_to_rad(60))
 		
 func _process(_delta):
 	guncam.global_transform = camera.global_transform
@@ -76,9 +80,10 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
-		
-	if(Input.is_action_just_pressed("shoot")):
-		shoot()
+	
+	if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+		if(Input.is_action_just_pressed("shoot")):
+			shoot()
 		
 	#Head bob
 	t_bob += delta * velocity.length()
@@ -95,6 +100,12 @@ func _physics_process(delta):
 			if(collider.is_in_group("activatable")):
 				collider.activate()
 				print("Activated Something")
+	
+	if(Input.is_action_just_pressed("tab_out")):
+		if(Input.mouse_mode == Input.MOUSE_MODE_CAPTURED):
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		else:
+			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
 	rotate_step_up_ray()
 	move_and_slide()
@@ -134,6 +145,12 @@ func shoot():
 func take_damage():
 	health -= 10
 	print("MEWOUCH")
+	
+func infect_adware():
+	var num_popups = rng.randi_range(2, 3)
+	for i in num_popups:
+		var popup = popup_scene.instantiate()
+		add_child(popup)
 	
 
 #func _input(event):

@@ -10,7 +10,7 @@ material = SubResource("StandardMaterial3D_10bri")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_wm50k"]
 
-[node name="Enemy" type="CharacterBody3D" groups=["enemy"]]
+[node name="Enemy" type="Area3D" groups=["enemy"]]
 script = ExtResource("1_045v5")
 
 [node name="MeshInstance" type="MeshInstance3D" parent="."]
@@ -18,3 +18,5 @@ mesh = SubResource("SphereMesh_qud8w")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_wm50k")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
