@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cx6xvc7o7ff1b"]
+[gd_scene load_steps=7 format=3 uid="uid://cx6xvc7o7ff1b"]
 
 [ext_resource type="Script" path="res://scenes/player_and_parts/healthbar.gd" id="1_ntu5y"]
 
@@ -6,6 +6,8 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6pw8k"]
 bg_color = Color(0.6, 0.929412, 0.6, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_7sh2l"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4a4jw"]
 bg_color = Color(0.254902, 0.254902, 0.254902, 1)
@@ -33,6 +35,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_6pw8k")
 value = 60.0
 show_percentage = false
 script = ExtResource("1_ntu5y")
+noise = SubResource("FastNoiseLite_7sh2l")
 
 [node name="damagebar" type="ProgressBar" parent="."]
 z_index = -1
