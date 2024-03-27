@@ -32,9 +32,11 @@ const VSWAY = 40
 
 # HEALTH
 @export var health: float = 100.0
+@onready var healthbar = $player_HUD/healthbar
 	
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	healthbar.init_health(health)
 	#hand.set_as_top_level(true)
 	
 func _unhandled_input(event):
@@ -142,7 +144,7 @@ func shoot():
 	
 func take_damage():
 	health -= 10
-	print("MEWOUCH")
+	healthbar.health = health
 	
 func infect_adware():
 	var num_popups = rng.randi_range(2, 3)
