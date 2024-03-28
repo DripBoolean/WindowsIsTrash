@@ -24,10 +24,12 @@ shader_parameter/noise_sample_size = 0.16
 shader_parameter/time_speed = 0.15
 shader_parameter/is_alpha = 0.1
 shader_parameter/color = Color(0.701961, 0.772549, 0.431373, 1)
+shader_parameter/red = 0.0
 shader_parameter/noise = SubResource("NoiseTexture2D_4hnrm")
 shader_parameter/normal_map = SubResource("NoiseTexture2D_dl2if")
 
 [sub_resource type="SphereMesh" id="SphereMesh_lsk8t"]
+resource_local_to_scene = true
 material = SubResource("ShaderMaterial_byel5")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_1t518"]
@@ -52,6 +54,7 @@ shader_parameter/noise_sample_size = 0.21
 shader_parameter/time_speed = 0.23
 shader_parameter/is_alpha = 1.0
 shader_parameter/color = Color(0.894118, 0.533333, 0, 1)
+shader_parameter/red = 0.0
 shader_parameter/noise = SubResource("NoiseTexture2D_6hlxg")
 shader_parameter/normal_map = SubResource("NoiseTexture2D_opbd8")
 
@@ -68,12 +71,12 @@ height = 1.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.00218654)
 script = ExtResource("1_f5grc")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+[node name="cloud" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.79383, 0, 0, 0, 1.67057, 0, 0, 0, 1.59633, -0.193057, 0.26251, -0.0238539)
 mesh = SubResource("SphereMesh_lsk8t")
-skeleton = NodePath("../MeshInstance3D")
+skeleton = NodePath("../model")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="model" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.269531, 0)
 mesh = SubResource("CapsuleMesh_f4l8n")
 

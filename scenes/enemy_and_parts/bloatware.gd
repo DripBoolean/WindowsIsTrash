@@ -5,6 +5,9 @@ extends CharacterBody3D
 @onready var bracer_arm = $BracerArm
 @onready var movement_raycast = $BracerArm/MovementRaycast
 
+@onready var bloat_body = $model.get_active_material(0)
+@onready var bloat_cloud = $cloud.get_active_material(0)
+
 var active = false
 var clockwise = true
 var swapping_direction = false
@@ -25,6 +28,10 @@ func sees_player():
 func _physics_process(delta):
 	var player = get_tree().get_first_node_in_group("player")
 	eyes.look_at(player.global_transform.origin, Vector3.UP)
+	
+	if bloat_body.get_shader_parameter("red") >= 0.0:
+		bloat_body.set_shader_parameter("red", bloat_body.get_shader_parameter("red") - delta * 1.2)
+		bloat_cloud.set_shader_parameter("red", bloat_cloud.get_shader_parameter("red") - delta * 1.2)
 	
 	if health <= 0:
 		queue_free()
@@ -68,4 +75,6 @@ func _physics_process(delta):
 		
 
 func take_damage():
+	bloat_body.set_shader_parameter("red", 1.0);
+	bloat_cloud.set_shader_parameter("red", 1.0);
 	health -= 1

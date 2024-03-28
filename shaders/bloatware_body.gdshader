@@ -11,6 +11,8 @@ uniform vec4 color: source_color;
 
 varying float height;
 
+uniform float red: hint_range(0.,1.) = 0.0;
+
 float fresnel(vec3 normal, mat4 camera_matrix) {
 	vec3 view_direction_world = (camera_matrix * vec4(0.0, 0.0, 1.0, 0.0)).xyz;
 	vec3 normal_world = (camera_matrix * vec4(normal, 0.0)).xyz;
@@ -34,9 +36,17 @@ void fragment() {
 	SPECULAR = height;
 	vec4 normal_m = texture(normal_map, UV);
 	//ALPHA = fresnel(NORMAL, VIEW_MATRIX);
+	// flash red
+	
+	
 	ALBEDO = color.rgb * normal_m.rgb + fresnel(NORMAL, VIEW_MATRIX) * 0.2;
 	ALBEDO *= normal_m.rgb;
 	ALBEDO.b *= sin(TIME * UV.y) + fresnel(NORMAL, VIEW_MATRIX);
+	
+	ALBEDO.r += clamp(red, 0.0, .6);
+	ALBEDO.g -= clamp(red, 0., .6);
+	ALBEDO.b -= clamp(red, 0., .6);
+	
 	ALPHA = clamp(fresnel(NORMAL, VIEW_MATRIX), is_alpha, 1.0);
 }
 
