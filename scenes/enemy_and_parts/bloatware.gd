@@ -71,7 +71,15 @@ func _physics_process(delta):
 		strafing_velocity = move_toward(strafing_velocity, target_strafing_velocity, 15 * delta)
 		
 		move_and_collide(movement_direction * strafing_velocity * delta)
-		move_and_collide(-relative_position.normalized() * delta)
+		var collision_data = move_and_collide(-relative_position.normalized() * delta)
+		if collision_data != null:
+			var collider = collision_data.get_collider()
+			if collider.is_in_group("player"):
+				collider.take_damage()
+				queue_free()
+				return
+
+
 		
 
 func take_damage():
