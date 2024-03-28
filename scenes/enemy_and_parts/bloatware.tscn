@@ -1,12 +1,64 @@
-[gd_scene load_steps=6 format=3 uid="uid://ism5xobilx0i"]
+[gd_scene load_steps=17 format=3 uid="uid://ism5xobilx0i"]
 
 [ext_resource type="Script" path="res://scenes/enemy_and_parts/bloatware.gd" id="1_f5grc"]
+[ext_resource type="Shader" path="res://shaders/bloatware_body.gdshader" id="2_gxyo5"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6nrvg"]
-albedo_color = Color(0.156863, 1, 0.211765, 1)
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_bfchf"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_4hnrm"]
+seamless = true
+noise = SubResource("FastNoiseLite_bfchf")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_cava5"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_dl2if"]
+seamless = true
+as_normal_map = true
+noise = SubResource("FastNoiseLite_cava5")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_byel5"]
+render_priority = 0
+shader = ExtResource("2_gxyo5")
+shader_parameter/height_multiplier = 0.5
+shader_parameter/noise_sample_size = 0.16
+shader_parameter/time_speed = 0.15
+shader_parameter/is_alpha = 0.1
+shader_parameter/color = Color(0.701961, 0.772549, 0.431373, 1)
+shader_parameter/noise = SubResource("NoiseTexture2D_4hnrm")
+shader_parameter/normal_map = SubResource("NoiseTexture2D_dl2if")
+
+[sub_resource type="SphereMesh" id="SphereMesh_lsk8t"]
+material = SubResource("ShaderMaterial_byel5")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_1t518"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_6hlxg"]
+seamless = true
+seamless_blend_skirt = 0.169
+noise = SubResource("FastNoiseLite_1t518")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_1ofo4"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_opbd8"]
+as_normal_map = true
+noise = SubResource("FastNoiseLite_1ofo4")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_40o7j"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("2_gxyo5")
+shader_parameter/height_multiplier = 0.7
+shader_parameter/noise_sample_size = 0.21
+shader_parameter/time_speed = 0.23
+shader_parameter/is_alpha = 1.0
+shader_parameter/color = Color(0.894118, 0.533333, 0, 1)
+shader_parameter/noise = SubResource("NoiseTexture2D_6hlxg")
+shader_parameter/normal_map = SubResource("NoiseTexture2D_opbd8")
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_f4l8n"]
-material = SubResource("StandardMaterial3D_6nrvg")
+resource_local_to_scene = true
+material = SubResource("ShaderMaterial_40o7j")
+height = 1.0
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_umhig"]
 
@@ -16,7 +68,13 @@ material = SubResource("StandardMaterial3D_6nrvg")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.00218654)
 script = ExtResource("1_f5grc")
 
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.79383, 0, 0, 0, 1.67057, 0, 0, 0, 1.59633, -0.193057, 0.26251, -0.0238539)
+mesh = SubResource("SphereMesh_lsk8t")
+skeleton = NodePath("../MeshInstance3D")
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.269531, 0)
 mesh = SubResource("CapsuleMesh_f4l8n")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

@@ -51,7 +51,7 @@ vec2 bubble(vec2 vert, float time) {
 void fragment() {
 	// Called for every pixel the material is visible on.
 	float time = TIME * speed;
-	vec2 uv = UV - 1.25;
+	vec2 uv = VERTEX.xy - 1.25;
 	uv.y = UV.y - 0.2;
 	//uv.x *= resolution.x / resolution.y;
 	uv *= zoom;
