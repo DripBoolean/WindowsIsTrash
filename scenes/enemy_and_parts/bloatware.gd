@@ -80,8 +80,6 @@ func _physics_process(delta):
 				return
 
 
-		
-
 func take_damage():
 	bloat_body.set_shader_parameter("red", 1.0);
 	bloat_cloud.set_shader_parameter("red", 1.0);

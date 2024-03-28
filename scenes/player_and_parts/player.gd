@@ -51,6 +51,12 @@ func _process(_delta):
 	#hand.global_transform.origin = hand_loc.global_transform.origin
 	#hand.rotation.y = lerp_angle(hand.rotation.y, rotation.y, SWAY * delta)
 	#hand.rotation.x = lerp_angle(hand.rotation.x, head.rotation.x, VSWAY * delta)
+	if health <= 0:
+		get_tree().paused = true
+		await get_tree().create_timer(1).timeout
+		get_tree().paused = false
+		get_tree().change_scene_to_file("res://scenes/player_and_parts/deathscene.tscn")
+		return
 		
 @onready var init_seperation_ray_dist = abs($step_up_ray.position.z)
 func rotate_step_up_ray():
@@ -143,11 +149,11 @@ func shoot():
 	$"../".add_child(new_projectile)
 	
 func take_damage():
-	health -= 10
+	health -= 100
 	healthbar.health = health
 	
 func infect_adware():
-	var num_popups = rng.randi_range(2, 3)
+	var num_popups = rng.randi_rangea(2, 3)
 	for i in num_popups:
 		var popup = popup_scene.instantiate()
 		add_child(popup)
