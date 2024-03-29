@@ -14,8 +14,8 @@ var clockwise = true
 var swapping_direction = false
 var strafing_velocity = 0
 var target_strafing_velocity = 0
-var max_strafing_velocity = 5
-var aproach_speed = 3.0
+var max_strafing_velocity = 6.0
+var aproach_speed = 7.0
 var attention = 10
 var health = 10
 var bracing_timer = 0.0
@@ -86,7 +86,7 @@ func _physics_process(delta):
 			var collider = collision_data.get_collider()
 			if collider.is_in_group("player"):
 				collider.take_damage()
-				collider.velocity += Vector3.UP
+				collider.velocity += -15.0 * relative_position.normalized() + 4 * Vector3.UP
 				bracing_timer = 2.0
 
 

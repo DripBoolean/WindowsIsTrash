@@ -1,7 +1,7 @@
 extends StaticBody3D
 
 var linux_installed = false
-var SPAWN_CHANCE_PER_INTERVAL = 0.1
+var SPAWN_CHANCE_PER_INTERVAL = 0.3
 var SPAWN_RANGE_HORIZONTAL = 5.0
 var SPAWN_RANGE_VERTICAL = 0.0
 @onready var sprite = $Sprite3D
