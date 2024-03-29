@@ -149,11 +149,11 @@ func shoot():
 	$"../".add_child(new_projectile)
 	
 func take_damage():
-	health -= 100
+	health -= 10
 	healthbar.health = health
 	
 func infect_adware():
-	var num_popups = rng.randi_rangea(2, 3)
+	var num_popups = rng.randi_range(2, 3)
 	for i in num_popups:
 		var popup = popup_scene.instantiate()
 		add_child(popup)

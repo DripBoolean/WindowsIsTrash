@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://xkauhl0dd2pd"]
+[gd_scene load_steps=6 format=3 uid="uid://xkauhl0dd2pd"]
 
 [ext_resource type="Script" path="res://scenes/enemy_and_parts/enemy.gd" id="1_045v5"]
+[ext_resource type="Texture2D" uid="uid://box8ao73th7lw" path="res://textures/Bill_Gates_Head_Pixel_Sprite.png" id="2_3bwlm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_10bri"]
 albedo_color = Color(1, 0, 1, 1)
@@ -14,9 +15,18 @@ material = SubResource("StandardMaterial3D_10bri")
 script = ExtResource("1_045v5")
 
 [node name="MeshInstance" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("SphereMesh_qud8w")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_wm50k")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+cast_shadow = 0
+billboard = 1
+alpha_scissor_threshold = 1.0
+alpha_antialiasing_mode = 2
+texture_filter = 0
+texture = ExtResource("2_3bwlm")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
