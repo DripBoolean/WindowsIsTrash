@@ -17,7 +17,7 @@ func _process(_delta):
 			num_completed += 1
 	
 	
-	$Node2D/ProgressBar.value = 100 * float(num_completed) / float(num_terminals)
+	$ProgressBar.value = 100 * float(num_completed) / float(num_terminals)
 
 	
 	if num_completed == num_terminals:

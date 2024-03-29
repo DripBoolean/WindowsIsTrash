@@ -8,25 +8,27 @@ position = Vector2(0, -1)
 script = ExtResource("1_fcpo7")
 
 [node name="Base" type="ColorRect" parent="."]
-offset_right = 199.0
-offset_bottom = 131.0
+offset_right = 326.0
+offset_bottom = 213.0
 color = Color(0.462745, 0.462745, 0.462745, 1)
 
 [node name="Head" type="ColorRect" parent="."]
-offset_right = 199.0
-offset_bottom = 20.0
+offset_right = 327.0
+offset_bottom = 34.0
 color = Color(0, 0, 0.666667, 1)
 
 [node name="Button" type="Button" parent="."]
-offset_left = 184.0
-offset_top = 4.0
-offset_right = 294.0
-offset_bottom = 134.0
+offset_left = 296.0
+offset_top = 5.0
+offset_right = 566.0
+offset_bottom = 275.0
 scale = Vector2(0.1, 0.1)
 icon = ExtResource("2_ndfd4")
+icon_alignment = 1
+expand_icon = true
 
 [node name="Text" type="RichTextLabel" parent="."]
-offset_left = 2.0
-offset_top = 19.0
-offset_right = 193.0
-offset_bottom = 129.0
+offset_left = 3.0
+offset_top = 38.0
+offset_right = 319.0
+offset_bottom = 210.0
