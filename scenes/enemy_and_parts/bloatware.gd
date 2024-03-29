@@ -14,8 +14,10 @@ var swapping_direction = false
 var strafing_velocity = 0
 var target_strafing_velocity = 0
 var max_strafing_velocity = 5
+var aproach_speed = 3.0
 var attention = 10
 var health = 10
+var bracing_timer = 0.0
 
 func sees_player():
 	if los.is_colliding():
@@ -46,6 +48,9 @@ func _physics_process(delta):
 	
 	if attention < 0:
 		active = false
+	
+	if bracing_timer > 0:
+		bracing_timer -= delta
 
 	if active:
 		var relative_position = global_position - player.global_position
@@ -71,13 +76,15 @@ func _physics_process(delta):
 		strafing_velocity = move_toward(strafing_velocity, target_strafing_velocity, 15 * delta)
 		
 		move_and_collide(movement_direction * strafing_velocity * delta)
-		var collision_data = move_and_collide(-relative_position.normalized() * delta)
+		var bracing_mult = -1.0
+		if bracing_timer > 0:
+			bracing_mult = 2.0
+		var collision_data = move_and_collide(bracing_mult * aproach_speed * relative_position.normalized() * delta)
 		if collision_data != null:
 			var collider = collision_data.get_collider()
 			if collider.is_in_group("player"):
 				collider.take_damage()
-				queue_free()
-				return
+				bracing_timer = 2.0
 
 
 func take_damage():
