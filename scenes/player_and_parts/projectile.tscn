@@ -73,6 +73,8 @@ transform = Transform3D(-0.994587, 0, -0.103903, -0.010473, 0.994907, 0.10025, 0
 mesh = SubResource("SphereMesh_nn3um")
 
 [node name="Area3D" type="Area3D" parent="."]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("SphereShape3D_8jxk5")
