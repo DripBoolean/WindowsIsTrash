@@ -8,8 +8,8 @@ script = ExtResource("1_ueib7")
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="ProgressBar" type="ProgressBar" parent="Node2D"]
-offset_left = 834.0
-offset_top = 602.0
-offset_right = 1136.0
-offset_bottom = 629.0
+offset_left = 841.0
+offset_top = 608.0
+offset_right = 1143.0
+offset_bottom = 635.0
 show_percentage = false
