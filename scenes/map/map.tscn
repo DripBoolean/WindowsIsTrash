@@ -37,6 +37,7 @@ material = SubResource("StandardMaterial3D_xd03u")
 
 [node name="floor_002" type="CSGBox3D" parent="floor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.95, 0)
+visible = false
 size = Vector3(100, 0.45, 100)
 material = SubResource("StandardMaterial3D_xd03u")
 

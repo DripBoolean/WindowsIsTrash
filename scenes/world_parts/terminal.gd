@@ -14,9 +14,9 @@ func _ready():
 
 func _process(_delta):
 	if linux_installed:
-		$Light.light_color = Color(0, 255, 0)
+		$Light.light_color = Color(0, 200, 0)
 	else:
-		$Light.light_color = Color(0, 0, 255)
+		$Light.light_color = Color(0, 0, rng.randi_range(200, 255))
 
 func activate():
 	linux_installed = true
