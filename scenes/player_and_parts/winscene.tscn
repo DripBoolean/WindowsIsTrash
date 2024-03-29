@@ -1,3 +1,14 @@
-[gd_scene format=3 uid="uid://didwwhepp4of3"]
+[gd_scene load_steps=2 format=3 uid="uid://didwwhepp4of3"]
 
-[node name="Winscene" type="Node3D"]
+[ext_resource type="Texture2D" uid="uid://ds3yylpmdwqa1" path="res://textures/Linux_Mint_logo_without_wordmark.png" id="1_hpqp6"]
+
+[node name="Winscene" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 647.0
+
+[node name="LinuxMintLogoWithoutWordmark" type="Sprite2D" parent="."]
+position = Vector2(546, 318)
+scale = Vector2(0.271484, 0.271484)
+texture = ExtResource("1_hpqp6")
