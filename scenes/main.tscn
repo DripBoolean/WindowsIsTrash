@@ -1,15 +1,18 @@
-[gd_scene load_steps=8 format=3 uid="uid://dg7t2gpulcgae"]
+[gd_scene load_steps=10 format=3 uid="uid://dg7t2gpulcgae"]
 
 [ext_resource type="PackedScene" uid="uid://cew1d7u8o5yka" path="res://scenes/map/map.tscn" id="1_fhuy1"]
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_pj1tf"]
 [ext_resource type="PackedScene" uid="uid://clpc2ycnliho2" path="res://scenes/player_and_parts/player.tscn" id="2_5o4qg"]
 [ext_resource type="PackedScene" uid="uid://bllqcipxi408k" path="res://scenes/enemy_and_parts/enemy_malware.tscn" id="4_s41y5"]
 [ext_resource type="PackedScene" uid="uid://dd2qlohuppov" path="res://scenes/world_parts/terminal.tscn" id="5_ln038"]
 [ext_resource type="PackedScene" uid="uid://ism5xobilx0i" path="res://scenes/enemy_and_parts/bloatware.tscn" id="6_8sj02"]
 [ext_resource type="PackedScene" uid="uid://cab37g7o7rhcm" path="res://scenes/world_parts/terminal_tracker.tscn" id="7_puoo0"]
+[ext_resource type="AudioStream" uid="uid://di5ssgc5sct7s" path="res://sounds/windows-vista-remix-101soundboards.mp3" id="8_2hjag"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_ufqbo"]
 
 [node name="Main" type="Node3D"]
+script = ExtResource("1_pj1tf")
 
 [node name="TerminalTracker" parent="." instance=ExtResource("7_puoo0")]
 
@@ -168,3 +171,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.555508, 1.27547, -1.53363)
 
 [node name="Bloatware14" parent="bloatware" instance=ExtResource("6_8sj02")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.21733, 0.914166, 8.65738)
+
+[node name="ost" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_2hjag")
+volume_db = -2.811
