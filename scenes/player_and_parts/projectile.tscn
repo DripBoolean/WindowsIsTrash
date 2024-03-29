@@ -61,6 +61,7 @@ script = ExtResource("1_774xy")
 shape = SubResource("SphereShape3D_a4ub0")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transparency = 0.38
 mesh = SubResource("SphereMesh_n4uwg")
 skeleton = NodePath("../MeshInstance3D")
 
