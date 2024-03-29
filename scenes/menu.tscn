@@ -29,40 +29,61 @@ script = ExtResource("1_64yvw")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 material = SubResource("ShaderMaterial_m3vya")
-layout_mode = 0
-offset_right = 1153.4
-offset_bottom = 652.44
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = SubResource("CanvasTexture_ugllc")
+expand_mode = 3
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 modulate = Color(0.752941, 0.537255, 1, 0.427451)
-layout_mode = 0
-offset_left = 191.0
-offset_top = 117.0
-offset_right = 231.0
-offset_bottom = 157.0
-scale = Vector2(20.0214, 4.97312)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -368.0
+offset_top = -196.0
+offset_right = -44.0
+offset_bottom = -195.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.4, 176.32)
 texture = SubResource("CanvasTexture_2csso")
 
 [node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 215.0
-offset_top = 112.0
-offset_right = 359.0
-offset_bottom = 135.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -356.0
+offset_top = -226.0
+offset_right = -212.0
+offset_bottom = -203.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(5.21833, 8.94511)
 text = "Windows is Trash!!"
 label_settings = ExtResource("3_1i4tw")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = 2
+anchors_preset = 7
+anchor_left = 0.5
 anchor_top = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 322.0
-offset_top = -132.0
-offset_right = 508.05
-offset_bottom = -92.0
+offset_left = -227.0
+offset_top = -123.0
+offset_right = -40.95
+offset_bottom = -83.0
+grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(2.8, 1.96)
 

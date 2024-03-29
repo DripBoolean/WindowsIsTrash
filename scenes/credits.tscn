@@ -28,18 +28,29 @@ script = ExtResource("1_8xgiy")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 material = SubResource("ShaderMaterial_5h6jj")
-layout_mode = 0
-offset_right = 1153.4
-offset_bottom = 652.44
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = SubResource("CanvasTexture_ul0xx")
+expand_mode = 3
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 modulate = Color(0.752941, 0.537255, 1, 0.427451)
-layout_mode = 0
-offset_left = 219.0
-offset_top = 244.0
-offset_right = 259.0
-offset_bottom = 284.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -353.0
+offset_top = -79.0
+offset_right = -313.0
+offset_bottom = -39.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(18, 5.24)
 texture = SubResource("CanvasTexture_sgedx")
 
@@ -63,11 +74,15 @@ text = "CREDITS:
 label_settings = ExtResource("3_j5tbm")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 0
-offset_left = 19.0
-offset_top = 533.0
-offset_right = 219.0
-offset_bottom = 630.5
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 27.0
+offset_top = -105.0
+offset_right = 227.0
+offset_bottom = -7.49994
+grow_vertical = 0
 scale = Vector2(1.20684, 1.36842)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
