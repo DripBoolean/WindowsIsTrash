@@ -159,6 +159,7 @@ func shoot():
 	$"../".add_child(new_projectile)
 	
 func take_damage():
+	$hit.play()
 	health -= 10
 	healthbar.health = health
 	

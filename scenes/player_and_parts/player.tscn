@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://clpc2ycnliho2"]
+[gd_scene load_steps=12 format=3 uid="uid://clpc2ycnliho2"]
 
 [ext_resource type="Script" path="res://scenes/player_and_parts/player.gd" id="1_7liyd"]
 [ext_resource type="Script" path="res://scenes/player_and_parts/hand.gd" id="2_cr2g4"]
 [ext_resource type="PackedScene" uid="uid://cx6xvc7o7ff1b" path="res://scenes/player_and_parts/healthbar.tscn" id="3_h1n7d"]
 [ext_resource type="PackedScene" uid="uid://cs18r5qyyflme" path="res://models/Gun_Model.glb" id="3_ykumy"]
 [ext_resource type="AudioStream" uid="uid://c5wqufvb7kqkm" path="res://sounds/background-error-101soundboards.mp3" id="4_cbd7u"]
+[ext_resource type="AudioStream" uid="uid://chb6tgeom5if" path="res://sounds/windows-xp-battery-critical-101soundboards.mp3" id="6_en5yj"]
 
 [sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_ngvsw"]
 length = 0.5
@@ -107,3 +108,6 @@ size_flags_vertical = 8
 
 [node name="popup" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_cbd7u")
+
+[node name="hit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_en5yj")
