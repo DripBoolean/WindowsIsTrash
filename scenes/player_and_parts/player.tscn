@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://clpc2ycnliho2"]
+[gd_scene load_steps=11 format=3 uid="uid://clpc2ycnliho2"]
 
 [ext_resource type="Script" path="res://scenes/player_and_parts/player.gd" id="1_7liyd"]
 [ext_resource type="Script" path="res://scenes/player_and_parts/hand.gd" id="2_cr2g4"]
 [ext_resource type="PackedScene" uid="uid://cx6xvc7o7ff1b" path="res://scenes/player_and_parts/healthbar.tscn" id="3_h1n7d"]
+[ext_resource type="PackedScene" uid="uid://cs18r5qyyflme" path="res://models/Gun_Model.glb" id="3_ykumy"]
+[ext_resource type="AudioStream" uid="uid://c5wqufvb7kqkm" path="res://sounds/background-error-101soundboards.mp3" id="4_cbd7u"]
 
 [sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_ngvsw"]
 length = 0.5
@@ -12,6 +14,11 @@ length = 0.5
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1c4wl"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_stxqp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vhk0h"]
+resource_local_to_scene = true
+transparency = 1
+albedo_color = Color(1, 1, 1, 0)
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.47065, 0)
@@ -44,11 +51,15 @@ script = ExtResource("2_cr2g4")
 sway_left = Vector3(0, 0.3, 0)
 sway_right = Vector3(0, -0.3, 0)
 
+[node name="Gun_Model" parent="Head/hand" instance=ExtResource("3_ykumy")]
+transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, 0, -1.19209e-07, 0.0609264)
+
 [node name="gun" type="MeshInstance3D" parent="Head/hand"]
 transform = Transform3D(-0.227282, 0, 0, 0, 0.22736, 0, 0, 0, 0.432273, -0.0686142, -0.0251671, 0.0170897)
 layers = 2
 mesh = SubResource("BoxMesh_stxqp")
 skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_vhk0h")
 
 [node name="gun_hole" type="Node3D" parent="Head/hand/gun"]
 transform = Transform3D(-4.39982, 0, 0, 0, 4.39832, 0, 0, 0, 1, 0.026573, 0.00149441, -0.4982)
@@ -91,3 +102,6 @@ offset_bottom = -11.0
 grow_horizontal = 1
 grow_vertical = 0
 size_flags_vertical = 8
+
+[node name="popup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_cbd7u")

@@ -4,6 +4,8 @@ var linux_installed = false
 var SPAWN_CHANCE_PER_INTERVAL = 0.1
 var SPAWN_RANGE_HORIZONTAL = 5.0
 var SPAWN_RANGE_VERTICAL = 0.0
+@onready var sprite = $Sprite3D
+var linux = preload("res://textures/Linux_Background_Pixel.png")
 
 var rng = RandomNumberGenerator.new()
 var adware_scene = preload("res://scenes/enemy_and_parts/enemy.tscn")
@@ -19,7 +21,9 @@ func _process(_delta):
 		$Light.light_color = Color(0, 0, rng.randi_range(200, 255))
 
 func activate():
+	$sfx.play()
 	linux_installed = true
+	sprite.texture = linux
 	print("ACTIVE")
 
 func complete():

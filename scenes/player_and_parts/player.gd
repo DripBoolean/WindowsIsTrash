@@ -157,6 +157,7 @@ func take_damage():
 	
 func infect_adware():
 	var num_popups = rng.randi_range(2, 3)
+	$popup.play()
 	for i in num_popups:
 		var popup = popup_scene.instantiate()
 		add_child(popup)

@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://ism5xobilx0i"]
+[gd_scene load_steps=18 format=3 uid="uid://ism5xobilx0i"]
 
 [ext_resource type="Script" path="res://scenes/enemy_and_parts/bloatware.gd" id="1_f5grc"]
 [ext_resource type="Shader" path="res://shaders/bloatware_body.gdshader" id="2_gxyo5"]
+[ext_resource type="AudioStream" uid="uid://d4mb1sphntk2" path="res://sounds/windows-7-critical-stop-101soundboards.mp3" id="3_oe62n"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_bfchf"]
 
@@ -99,3 +100,7 @@ mesh = SubResource("CylinderMesh_8bk2y")
 
 [node name="MovementRaycast" type="RayCast3D" parent="BracerArm"]
 transform = Transform3D(3, 0, 0, 0, -1.31134e-07, -3, 0, 3, -1.31134e-07, 0, 0, 0)
+
+[node name="sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_oe62n")
+volume_db = -4.685
