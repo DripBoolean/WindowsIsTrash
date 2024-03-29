@@ -11,7 +11,7 @@ size = Vector3(1, 2, 1)
 [sub_resource type="SphereShape3D" id="SphereShape3D_n6sjv"]
 radius = 15.8931
 
-[node name="Terminal" type="StaticBody3D" groups=["activatable"]]
+[node name="Terminal" type="StaticBody3D" groups=["activatable", "progress"]]
 script = ExtResource("1_qdrne")
 
 [node name="MeshInstance" type="MeshInstance3D" parent="." groups=["activateable"]]

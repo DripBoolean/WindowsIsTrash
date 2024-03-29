@@ -22,6 +22,9 @@ func activate():
 	linux_installed = true
 	print("ACTIVE")
 
+func complete():
+	return linux_installed
+
 func _on_spawn_timer_timeout():
 	if not $ActiveArea.overlaps_body(get_tree().get_first_node_in_group("player")):
 		return

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cab37g7o7rhcm"]
+
+[ext_resource type="Script" path="res://scenes/world_parts/terminal_tracker.gd" id="1_ueib7"]
+
+[node name="TerminalTracker" type="Node"]
+script = ExtResource("1_ueib7")
