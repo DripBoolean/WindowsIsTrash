@@ -23,6 +23,8 @@ func activate():
 	print("ACTIVE")
 
 func _on_spawn_timer_timeout():
+	if not $ActiveArea.overlaps_body(get_tree().get_first_node_in_group("player")):
+		return
 	if rng.randf_range(0, 1) < SPAWN_CHANCE_PER_INTERVAL:
 		var adware_instance = adware_scene.instantiate()
 		adware_instance.position = Vector3(

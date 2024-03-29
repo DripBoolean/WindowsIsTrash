@@ -49,20 +49,8 @@ transform = Transform3D(0.99683, 0, 0.0795759, 0, 1, 0, -0.0795759, 0, 0.99683, 
 [node name="Terminal7" parent="." instance=ExtResource("5_ln038")]
 transform = Transform3D(0.299179, 0, -0.954199, 0, 1, 0, 0.954199, 0, 0.299179, 22.7148, 1.20478, -9.69283)
 
-[node name="Terminal15" parent="." instance=ExtResource("5_ln038")]
-transform = Transform3D(-0.988293, 0, 0.152631, 0, 1, 0, -0.152631, 0, -0.988293, 49.0316, 1.08956, 46.693)
-
-[node name="Terminal14" parent="." instance=ExtResource("5_ln038")]
-transform = Transform3D(-0.995137, 0, -0.0985578, 0, 1, 0, 0.0985578, 0, -0.995137, 49.4512, 1.0405, 34.6363)
-
 [node name="Terminal8" parent="." instance=ExtResource("5_ln038")]
 transform = Transform3D(-0.999977, 0, 0.0071986, 0, 1, 0, -0.0071986, 0, -0.999977, 48.3705, 0.991429, 22.3968)
-
-[node name="Terminal13" parent="." instance=ExtResource("5_ln038")]
-transform = Transform3D(0.999912, 0, 0.0157177, 0, 1, 0, -0.0157177, 0, 0.999912, -45.0543, 1.16831, 17.0814)
-
-[node name="Terminal12" parent="." instance=ExtResource("5_ln038")]
-transform = Transform3D(0.0949912, 0, 0.995496, 0, 1, 0, -0.995496, 0, 0.0949912, -38.6672, 1.04157, 49.5086)
 
 [node name="Terminal9" parent="." instance=ExtResource("5_ln038")]
 transform = Transform3D(0.0060102, 0, 0.999991, 0, 1, 0, -0.999991, 0, 0.0060102, -8.33875, 1.09907, 49.1388)
@@ -72,3 +60,15 @@ transform = Transform3D(-0.157244, 0, -0.987566, 0, 1, 0, 0.987566, 0, -0.157244
 
 [node name="Terminal11" parent="." instance=ExtResource("5_ln038")]
 transform = Transform3D(0.228373, 0, -0.973585, 0, 1, 0, 0.973585, 0, 0.228373, -19.793, 1.13897, 28.7772)
+
+[node name="Terminal12" parent="." instance=ExtResource("5_ln038")]
+transform = Transform3D(0.0949912, 0, 0.995496, 0, 1, 0, -0.995496, 0, 0.0949912, -38.6672, 1.04157, 49.5086)
+
+[node name="Terminal13" parent="." instance=ExtResource("5_ln038")]
+transform = Transform3D(0.999913, 0, 0.0157177, 0, 1, 0, -0.0157177, 0, 0.999913, -45.0543, 1.16831, 17.0814)
+
+[node name="Terminal14" parent="." instance=ExtResource("5_ln038")]
+transform = Transform3D(-0.995137, 0, -0.0985578, 0, 1, 0, 0.0985578, 0, -0.995137, 49.4512, 1.0405, 34.6363)
+
+[node name="Terminal15" parent="." instance=ExtResource("5_ln038")]
+transform = Transform3D(-0.988293, 0, 0.152631, 0, 1, 0, -0.152631, 0, -0.988293, 49.0316, 1.08956, 46.693)

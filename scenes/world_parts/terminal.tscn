@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dd2qlohuppov"]
+[gd_scene load_steps=5 format=3 uid="uid://dd2qlohuppov"]
 
 [ext_resource type="Script" path="res://scenes/world_parts/terminal.gd" id="1_qdrne"]
 
@@ -7,6 +7,9 @@ size = Vector3(1, 2, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_n66yp"]
 size = Vector3(1, 2, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_n6sjv"]
+radius = 15.8931
 
 [node name="Terminal" type="StaticBody3D" groups=["activatable"]]
 script = ExtResource("1_qdrne")
@@ -25,5 +28,10 @@ omni_range = 14.699
 omni_attenuation = 4.28709
 
 [node name="SpawnTimer" type="Timer" parent="."]
+
+[node name="ActiveArea" type="Area3D" parent="."]
+
+[node name="CollisionShape" type="CollisionShape3D" parent="ActiveArea"]
+shape = SubResource("SphereShape3D_n6sjv")
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
