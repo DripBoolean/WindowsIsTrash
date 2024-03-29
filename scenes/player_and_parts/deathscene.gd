@@ -8,15 +8,18 @@ var rng = RandomNumberGenerator.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$Gates.modulate.a = 0.0
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	elapsed += delta
+	
 	if elapsed > tick_time:
 		elapsed -= tick_time
-		progress += randi_range(0, 15)
+		progress += randi_range(0, 40)
+		$Gates.modulate.a = 0.3 * (progress / 100.0)
 		if progress > 100:
 			get_tree().quit()
 			return

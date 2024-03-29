@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dqnsmnajdmyu4"]
+[gd_scene load_steps=7 format=3 uid="uid://dqnsmnajdmyu4"]
 
 [ext_resource type="Script" path="res://scenes/player_and_parts/deathscene.gd" id="1_tcuot"]
 [ext_resource type="FontFile" uid="uid://b05f04c51obto" path="res://fonts/segoeuil.ttf" id="2_sxw3x"]
+[ext_resource type="AudioStream" uid="uid://0tdf2dy6o3vl" path="res://sounds/blue-screen-of-death-sound-made-with-Voicemod.mp3" id="3_vfson"]
+[ext_resource type="Texture2D" uid="uid://c7a20xcwi4aoe" path="res://textures/Bill_Gates_Head_Pixel_Sprite.png" id="4_eyv1j"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ywfvm"]
 load_path = "res://.godot/imported/windows10-bsod.jpg-3d2fb62c2419d4bdc8eb4a39904efd38.ctex"
@@ -35,3 +37,15 @@ offset_bottom = 402.0
 theme = SubResource("Theme_p5dox")
 text = "0% Complete
 "
+
+[node name="Brrr" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_vfson")
+volume_db = -15.356
+autoplay = true
+
+[node name="Gates" type="TextureRect" parent="."]
+offset_left = -132.0
+offset_top = -97.0
+offset_right = 1391.0
+offset_bottom = 759.0
+texture = ExtResource("4_eyv1j")
