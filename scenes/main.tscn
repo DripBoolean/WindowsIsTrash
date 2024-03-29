@@ -12,6 +12,8 @@
 
 [node name="Main" type="Node3D"]
 
+[node name="TerminalTracker" parent="." instance=ExtResource("7_puoo0")]
+
 [node name="Player" parent="." instance=ExtResource("2_5o4qg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.8038, 1.76088, -12.7671)
 
@@ -73,5 +75,3 @@ transform = Transform3D(-0.995137, 0, -0.0985578, 0, 1, 0, 0.0985578, 0, -0.9951
 
 [node name="Terminal15" parent="." instance=ExtResource("5_ln038")]
 transform = Transform3D(-0.988293, 0, 0.152631, 0, 1, 0, -0.152631, 0, -0.988293, 49.0316, 1.08956, 46.693)
-
-[node name="TerminalTracker" parent="." instance=ExtResource("7_puoo0")]
