@@ -84,6 +84,7 @@ func _physics_process(delta):
 			var collider = collision_data.get_collider()
 			if collider.is_in_group("player"):
 				collider.take_damage()
+				collider.velocity += Vector3.UP
 				bracing_timer = 2.0
 
 
