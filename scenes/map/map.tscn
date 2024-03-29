@@ -40,6 +40,8 @@ transform = Transform3D(3.36979, 0, 0, 0, 1, 0, 0, 0, 0.920613, -48.0522, 0.4116
 
 [node name="floor" type="CSGCombiner3D" parent="." groups=["floor"]]
 use_collision = true
+collision_layer = 3
+collision_mask = 3
 
 [node name="floor_001" type="CSGBox3D" parent="floor"]
 size = Vector3(100, 0.45, 100)
@@ -67,6 +69,8 @@ size = Vector3(0.92041, 1, 1.10693)
 
 [node name="wall" type="CSGCombiner3D" parent="." groups=["wall"]]
 use_collision = true
+collision_layer = 3
+collision_mask = 3
 
 [node name="large_wall_N" type="CSGBox3D" parent="wall"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 2.73, 0)
