@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dd2qlohuppov"]
+[gd_scene load_steps=8 format=3 uid="uid://dd2qlohuppov"]
 
 [ext_resource type="Script" path="res://scenes/world_parts/terminal.gd" id="1_qdrne"]
 [ext_resource type="AudioStream" uid="uid://3ibr0bxxd0yq" path="res://sounds/Linux Mint LoginStartup Sound.mp3" id="2_8xbfs"]
+[ext_resource type="PackedScene" uid="uid://c74uygsgjtkjg" path="res://models/Terminal_Model.glb" id="2_f61xp"]
+[ext_resource type="Texture2D" uid="uid://bspehkmm5xk6a" path="res://textures/Windows_Bliss_Pixel.png" id="4_3rvvm"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_k33bq"]
 size = Vector3(1, 2, 1)
@@ -15,7 +17,12 @@ radius = 15.8931
 [node name="Terminal" type="StaticBody3D" groups=["activatable", "progress"]]
 script = ExtResource("1_qdrne")
 
+[node name="Terminal_Model" parent="." instance=ExtResource("2_f61xp")]
+transform = Transform3D(-1.74846e-06, 0, -40, 0, 40, 0, 40, 0, -1.74846e-06, -0.00424153, -0.955351, 0.152078)
+
 [node name="MeshInstance" type="MeshInstance3D" parent="." groups=["activateable"]]
+transparency = 1.0
+cast_shadow = 0
 mesh = SubResource("BoxMesh_k33bq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -23,9 +30,12 @@ shape = SubResource("BoxShape3D_n66yp")
 
 [node name="Light" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.605436, 0.649305, 0)
+light_energy = 0.001
 shadow_enabled = true
 shadow_bias = 0.69
-omni_range = 14.699
+shadow_opacity = 0.54
+distance_fade_enabled = true
+omni_range = 7.506
 omni_attenuation = 4.28709
 
 [node name="SpawnTimer" type="Timer" parent="."]
@@ -37,5 +47,9 @@ shape = SubResource("SphereShape3D_n6sjv")
 
 [node name="sfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_8xbfs")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(-1.74846e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.74846e-08, 0.266033, 0.400794, 0.155052)
+texture = ExtResource("4_3rvvm")
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
