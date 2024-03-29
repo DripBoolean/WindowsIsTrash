@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 var camera_rotation = Vector2(0, 0)
 const JUMP_VELOCITY = 5
-const SPEED = 5.0
+const SPEED = 1.5
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 const SENSITIVITY = 0.005
 
@@ -82,18 +82,18 @@ func _physics_process(delta):
 	var input_dir = Input.get_vector("strafe_left", "strafe_right", "move_forward", "move_backward")
 	var direction = (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	direction.y = 0
+	if Input.is_action_pressed("sprint"):
+		direction *= 1.4
 	
-	velocity.x = move_toward(velocity.x, 0, SPEED)
-	velocity.z = move_toward(velocity.z, 0, SPEED)
+	velocity *= 0.8
 	
 	if direction:
 		velocity += direction * SPEED
-		
-	
 	
 	if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		if(Input.is_action_just_pressed("shoot")):
-			shoot()		
+			if not Input.is_action_pressed("sprint"):
+				shoot()		
 	#Head bob
 	t_bob += delta * velocity.length()
 	if(not is_on_floor()):

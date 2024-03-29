@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bllqcipxi408k" path="res://scenes/enemy_and_parts/enemy_malware.tscn" id="4_s41y5"]
 [ext_resource type="PackedScene" uid="uid://dd2qlohuppov" path="res://scenes/world_parts/terminal.tscn" id="5_ln038"]
 [ext_resource type="PackedScene" uid="uid://ism5xobilx0i" path="res://scenes/enemy_and_parts/bloatware.tscn" id="6_8sj02"]
-[ext_resource type="PackedScene" path="res://scenes/world_parts/terminal_tracker.tscn" id="7_puoo0"]
+[ext_resource type="PackedScene" uid="uid://cab37g7o7rhcm" path="res://scenes/world_parts/terminal_tracker.tscn" id="7_puoo0"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_ufqbo"]
 
