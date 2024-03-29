@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bbfo83ml3wkg7"]
+[gd_scene load_steps=7 format=3 uid="uid://bbfo83ml3wkg7"]
 
 [ext_resource type="Script" path="res://scenes/player_and_parts/popup.gd" id="1_fcpo7"]
 [ext_resource type="Texture2D" uid="uid://khv3mnq08so7" path="res://textures/icons8-close-96.png" id="2_ndfd4"]
@@ -11,6 +11,16 @@ gradient = SubResource("Gradient_sk6rb")
 fill_from = Vector2(0.518349, 0)
 fill_to = Vector2(0.522936, 1)
 
+[sub_resource type="Gradient" id="Gradient_shjqu"]
+colors = PackedColorArray(0, 0, 0.623529, 1, 0.0655356, 4.81308e-08, 0.452842, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_go27e"]
+gradient = SubResource("Gradient_shjqu")
+width = 32
+height = 32
+fill_from = Vector2(0, 0.298165)
+fill_to = Vector2(0.981651, 0.541284)
+
 [node name="Popup" type="CanvasGroup"]
 position = Vector2(0, -1)
 script = ExtResource("1_fcpo7")
@@ -20,10 +30,10 @@ offset_right = 239.0
 offset_bottom = 152.0
 texture = SubResource("GradientTexture2D_yyrqe")
 
-[node name="Head" type="ColorRect" parent="."]
-offset_right = 240.0
-offset_bottom = 34.0
-color = Color(0, 0, 0.666667, 1)
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 239.0
+offset_bottom = 32.0
+texture = SubResource("GradientTexture2D_go27e")
 
 [node name="Button" type="Button" parent="."]
 offset_left = 208.0

@@ -1,11 +1,13 @@
 [gd_scene load_steps=2 format=3 uid="uid://5dfl7lvsdin7"]
 
-[ext_resource type="Material" uid="uid://bmbb83exjc35f" path="res://shaders/stairs.tres" id="1_dceo7"]
+[ext_resource type="Material" path="res://shaders/stairs.tres" id="1_dceo7"]
 
 [node name="stairs" type="Node3D"]
 
 [node name="staircase" type="CSGCombiner3D" parent="."]
 use_collision = true
+collision_layer = 3
+collision_mask = 3
 
 [node name="CSGBox3D" type="CSGBox3D" parent="staircase"]
 transform = Transform3D(1, 0, 0, 0, 0.415168, 0, 0, 0, 5.91679, 0, 0, -0.17)
