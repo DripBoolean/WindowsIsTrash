@@ -162,6 +162,8 @@ func infect_adware():
 		var popup = popup_scene.instantiate()
 		add_child(popup)
 	
+	health -= 1
+	
 
 #func _input(event):
 	#if event is InputEventMouseMotion:

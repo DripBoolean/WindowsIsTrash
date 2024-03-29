@@ -22,6 +22,8 @@ albedo_color = Color(1, 1, 1, 0)
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.47065, 0)
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_7liyd")
 
 [node name="step_up_ray" type="CollisionShape3D" parent="."]
