@@ -33,7 +33,7 @@ uv1_triplanar = true
 transform = Transform3D(1, 0, 0, 0, 0.877632, 0.479335, 0, -0.479335, 0.877632, -41.7125, 6.29294, -7.33817)
 
 [node name="glass_base" parent="." instance=ExtResource("1_vrxwk")]
-transform = Transform3D(1.51584, 0, 0, 0, 1, 0, 0, 0, 2.23301, -46.1737, 2.7089, -17.3388)
+transform = Transform3D(1.51584, 0, 0, 0, 1, 0, 0, 0, 2.23301, -46.1737, 2.55838, -17.6708)
 
 [node name="stairs" parent="." instance=ExtResource("1_j35d7")]
 transform = Transform3D(3.36979, 0, 0, 0, 1, 0, 0, 0, 0.920613, -48.0522, 0.411691, -46.892)
@@ -59,6 +59,11 @@ size = Vector3(1, 1, 1.10693)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.22396, 0)
 size = Vector3(100, 0.45, 100)
 material = SubResource("StandardMaterial3D_xd03u")
+
+[node name="floor_remove_002" type="CSGBox3D" parent="floor"]
+transform = Transform3D(3.71597, 0, 0, 0, 1, 0, 0, 0, 5.61969, 48.1095, 3.91752, -47.4001)
+operation = 2
+size = Vector3(0.92041, 1, 1.10693)
 
 [node name="wall" type="CSGCombiner3D" parent="." groups=["wall"]]
 use_collision = true
@@ -223,3 +228,17 @@ material = SubResource("StandardMaterial3D_wnyix")
 transform = Transform3D(2.9552, 0, 0, 0, 1.45614, 0, 0, 0, 12.7, 12.6974, 0, -24.3067)
 polygon = PackedVector2Array(-1, 0, -1, 1, 0, 1, 1, 0)
 material = SubResource("StandardMaterial3D_q24ie")
+
+[node name="wall_hole_007" type="CSGBox3D" parent="wall"]
+transform = Transform3D(1, 0, 0, 0, 1.12443, 0, 0, 0, 1, 8.67236, 2.58638, -30.7191)
+operation = 2
+snap = 1e-06
+size = Vector3(3, 2, 12)
+
+[node name="wall_016" type="CSGBox3D" parent="wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.2014, 1.80002, -43.7316)
+size = Vector3(1, 4, 40)
+material = SubResource("StandardMaterial3D_wnyix")
+
+[node name="stairs2" parent="." instance=ExtResource("1_j35d7")]
+transform = Transform3D(3.36979, 0, 0, 0, 1, 0, 0, 0, 0.920613, 48.0792, 0.411691, -46.983)
