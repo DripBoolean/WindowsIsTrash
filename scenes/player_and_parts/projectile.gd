@@ -18,3 +18,9 @@ func _on_body_entered(body):
 
 func destroy():
 	self.queue_free()
+
+
+func _on_area_3d_area_entered(area):
+	if area.is_in_group("enemy"):
+		area.take_damage()
+		self.destroy()

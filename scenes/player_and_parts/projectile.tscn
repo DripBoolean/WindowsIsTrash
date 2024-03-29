@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://sb7l73rmbnhl"]
+[gd_scene load_steps=11 format=3 uid="uid://sb7l73rmbnhl"]
 
 [ext_resource type="Script" path="res://scenes/player_and_parts/projectile.gd" id="1_774xy"]
 [ext_resource type="Shader" path="res://shaders/projectile_body.gdshader" id="2_nm7b6"]
@@ -48,6 +48,8 @@ material = SubResource("ShaderMaterial_4cmgj")
 radius = 0.3
 height = 0.6
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_8jxk5"]
+
 [node name="Projectile" type="RigidBody3D"]
 physics_material_override = SubResource("PhysicsMaterial_570ac")
 gravity_scale = 0.0
@@ -69,5 +71,11 @@ mesh = SubResource("SphereMesh_nn3um")
 transform = Transform3D(-0.994587, 0, -0.103903, -0.010473, 0.994907, 0.10025, 0.103374, 0.100796, -0.989522, 0, 0, 0)
 mesh = SubResource("SphereMesh_nn3um")
 
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_8jxk5")
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
