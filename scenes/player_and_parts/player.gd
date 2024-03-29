@@ -84,8 +84,15 @@ func _physics_process(delta):
 	direction.y = 0
 	if Input.is_action_pressed("sprint"):
 		direction *= 1.4
+	if not is_on_floor():
+		direction *= 0.2
 	
-	velocity *= 0.8
+	
+	if is_on_floor():
+		var old_y = velocity.y
+		velocity *= 0.8
+		velocity.y = old_y
+	velocity *= 0.95
 	
 	if direction:
 		velocity += direction * SPEED
