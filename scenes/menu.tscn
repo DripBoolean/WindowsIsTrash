@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bi34jy0rroccs"]
+[gd_scene load_steps=8 format=3 uid="uid://bi34jy0rroccs"]
 
 [ext_resource type="Script" path="res://scenes/Menu.gd" id="1_64yvw"]
 [ext_resource type="Shader" path="res://shaders/menu.gdshader" id="2_rqs6j"]
 [ext_resource type="LabelSettings" uid="uid://dfbmnb7r6n0at" path="res://shaders/text.tres" id="3_1i4tw"]
+[ext_resource type="AudioStream" uid="uid://b2s15g11vwhh1" path="res://sounds/tamhe08_loop.ogg" id="4_388b4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m3vya"]
 resource_local_to_scene = true
@@ -28,12 +29,14 @@ script = ExtResource("1_64yvw")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 material = SubResource("ShaderMaterial_m3vya")
+layout_mode = 0
 offset_right = 1153.4
 offset_bottom = 652.44
 texture = SubResource("CanvasTexture_ugllc")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 modulate = Color(0.752941, 0.537255, 1, 0.427451)
+layout_mode = 0
 offset_left = 191.0
 offset_top = 117.0
 offset_right = 231.0
@@ -78,6 +81,9 @@ text = "CREDITS
 [node name="Quit" type="Button" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 text = "QUIT"
+
+[node name="ost" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_388b4")
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/Credits" to="." method="_on_credits_pressed"]

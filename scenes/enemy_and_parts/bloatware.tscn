@@ -18,6 +18,7 @@ as_normal_map = true
 noise = SubResource("FastNoiseLite_cava5")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_byel5"]
+resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("2_gxyo5")
 shader_parameter/height_multiplier = 0.5
