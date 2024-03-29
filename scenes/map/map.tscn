@@ -1,20 +1,30 @@
-[gd_scene load_steps=7 format=3 uid="uid://cew1d7u8o5yka"]
+[gd_scene load_steps=10 format=3 uid="uid://cew1d7u8o5yka"]
 
-[ext_resource type="Texture2D" uid="uid://ca2pk2qugckdq" path="res://textures/orangegrid.png" id="1_2dnaw"]
 [ext_resource type="PackedScene" uid="uid://5dfl7lvsdin7" path="res://models/stairs.tscn" id="1_j35d7"]
 [ext_resource type="PackedScene" uid="uid://dvpmbsf2cbnrc" path="res://models/glass_base.tscn" id="1_vrxwk"]
-[ext_resource type="Texture2D" uid="uid://cdgsgobxbi03e" path="res://textures/greengrid.png" id="2_gf0y6"]
+[ext_resource type="Texture2D" uid="uid://bqvm28brbrdmn" path="res://textures/Texture_Floor_HQ.png" id="3_tetrw"]
+[ext_resource type="Texture2D" uid="uid://dj42dsciaqjh4" path="res://textures/Texture_Wall_HQ.png" id="4_koeq0"]
+[ext_resource type="Texture2D" uid="uid://caimdiq0hm4kj" path="res://textures/Texture_Roof_HQ.png" id="5_p8amo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xd03u"]
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("1_2dnaw")
+albedo_texture = ExtResource("3_tetrw")
+metallic = 0.68
 uv1_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wnyix"]
 resource_local_to_scene = true
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 0.454902, 0.992157, 1)
-albedo_texture = ExtResource("2_gf0y6")
+albedo_color = Color(0.6, 0.768627, 1, 1)
+albedo_texture = ExtResource("4_koeq0")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i834y"]
+albedo_texture = ExtResource("5_p8amo")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q24ie"]
+albedo_texture = ExtResource("5_p8amo")
 uv1_triplanar = true
 
 [node name="map" type="Node3D"]
@@ -37,7 +47,6 @@ material = SubResource("StandardMaterial3D_xd03u")
 
 [node name="floor_002" type="CSGBox3D" parent="floor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.95, 0)
-visible = false
 size = Vector3(100, 0.45, 100)
 material = SubResource("StandardMaterial3D_xd03u")
 
@@ -45,6 +54,11 @@ material = SubResource("StandardMaterial3D_xd03u")
 transform = Transform3D(3.71597, 0, 0, 0, 1, 0, 0, 0, 5.61969, -47.893, 3.95, -47.4001)
 operation = 2
 size = Vector3(1, 1, 1.10693)
+
+[node name="floor_003" type="CSGBox3D" parent="floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.22396, 0)
+size = Vector3(100, 0.45, 100)
+material = SubResource("StandardMaterial3D_xd03u")
 
 [node name="wall" type="CSGCombiner3D" parent="." groups=["wall"]]
 use_collision = true
@@ -168,3 +182,44 @@ size = Vector3(3, 2, 12)
 [node name="ramp_001" type="CSGPolygon3D" parent="wall"]
 transform = Transform3D(2.9552, 0, 0, 0, 1.45614, 0, 0, 0, 12.7, -42.6015, 0, -11)
 polygon = PackedVector2Array(-1, 0, -1, 1, 0, 1, 1, 0)
+material = SubResource("StandardMaterial3D_i834y")
+
+[node name="large_wall_N2" type="CSGBox3D" parent="wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 8.69938, 0)
+size = Vector3(0.5, 6, 100)
+material = SubResource("StandardMaterial3D_wnyix")
+
+[node name="large_wall_E2" type="CSGBox3D" parent="wall"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 8.73749, 50)
+size = Vector3(0.5, 6, 100)
+material = SubResource("StandardMaterial3D_wnyix")
+
+[node name="large_wall_S2" type="CSGBox3D" parent="wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 8.59254, 0)
+size = Vector3(0.5, 6, 100)
+material = SubResource("StandardMaterial3D_wnyix")
+
+[node name="large_wall_W2" type="CSGBox3D" parent="wall"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 8.50472, -50)
+size = Vector3(0.5, 6, 100)
+material = SubResource("StandardMaterial3D_wnyix")
+
+[node name="wall_013" type="CSGBox3D" parent="wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.3637, 6.17722, -30)
+size = Vector3(1, 4, 40)
+material = SubResource("StandardMaterial3D_wnyix")
+
+[node name="wall_014" type="CSGBox3D" parent="wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.3637, 6.17722, 16.5882)
+size = Vector3(1, 4, 40)
+material = SubResource("StandardMaterial3D_wnyix")
+
+[node name="wall_015" type="CSGBox3D" parent="wall"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20.1485, 6.17722, 16.5882)
+size = Vector3(1, 4, 40)
+material = SubResource("StandardMaterial3D_wnyix")
+
+[node name="ramp_002" type="CSGPolygon3D" parent="wall"]
+transform = Transform3D(2.9552, 0, 0, 0, 1.45614, 0, 0, 0, 12.7, 12.6974, 0, -24.3067)
+polygon = PackedVector2Array(-1, 0, -1, 1, 0, 1, 1, 0)
+material = SubResource("StandardMaterial3D_q24ie")
