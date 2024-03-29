@@ -242,3 +242,6 @@ material = SubResource("StandardMaterial3D_wnyix")
 
 [node name="stairs2" parent="." instance=ExtResource("1_j35d7")]
 transform = Transform3D(3.36979, 0, 0, 0, 1, 0, 0, 0, 0.920613, 48.0792, 0.411691, -46.983)
+
+[node name="glass_base2" parent="." instance=ExtResource("1_vrxwk")]
+transform = Transform3D(1.51584, 0, 0, 0, 1, 0, 0, 0, 2.23301, 9.19808, 2.55838, -30.7158)
