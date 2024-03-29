@@ -62,7 +62,7 @@ transform = Transform3D(-0.988293, 0, 0.152631, 0, 1, 0, -0.152631, 0, -0.988293
 transform = Transform3D(-0.0150966, 0, 0.999886, 0, 1, 0, -0.999886, 0, -0.0150966, -45.4478, 4.93378, -22.7401)
 
 [node name="Player" parent="." instance=ExtResource("2_5o4qg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.8038, 1.76088, -12.7671)
+transform = Transform3D(-0.999254, 0, 0.0386145, 0, 1, 0, -0.0386145, 0, -0.999254, -48.6402, 1.76088, -39.1585)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_ufqbo")

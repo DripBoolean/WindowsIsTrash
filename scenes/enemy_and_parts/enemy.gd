@@ -10,7 +10,7 @@ func _process(delta):
 	var player = get_tree().get_first_node_in_group("player")
 	
 	var movement_direction = (player.global_transform.origin - global_transform.origin).normalized()
-	global_transform.origin += movement_direction * delta * 2.0
+	global_transform.origin += movement_direction * delta * 1.5
 	
 	if color.b < 1.0:
 		color.b += 1.0 * delta
