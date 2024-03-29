@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://dg7t2gpulcgae"]
+[gd_scene load_steps=8 format=3 uid="uid://dg7t2gpulcgae"]
 
 [ext_resource type="PackedScene" uid="uid://cew1d7u8o5yka" path="res://scenes/map/map.tscn" id="1_fhuy1"]
 [ext_resource type="PackedScene" uid="uid://clpc2ycnliho2" path="res://scenes/player_and_parts/player.tscn" id="2_5o4qg"]
-[ext_resource type="PackedScene" uid="uid://xkauhl0dd2pd" path="res://scenes/enemy_and_parts/enemy.tscn" id="3_0ttrc"]
 [ext_resource type="PackedScene" uid="uid://bllqcipxi408k" path="res://scenes/enemy_and_parts/enemy_malware.tscn" id="4_s41y5"]
 [ext_resource type="PackedScene" uid="uid://dd2qlohuppov" path="res://scenes/world_parts/terminal.tscn" id="5_ln038"]
 [ext_resource type="PackedScene" uid="uid://ism5xobilx0i" path="res://scenes/enemy_and_parts/bloatware.tscn" id="6_8sj02"]
@@ -14,64 +13,158 @@
 
 [node name="TerminalTracker" parent="." instance=ExtResource("7_puoo0")]
 
-[node name="Player" parent="." instance=ExtResource("2_5o4qg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.8038, 1.76088, -12.7671)
-
-[node name="Enemy" parent="." instance=ExtResource("3_0ttrc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.1227, 2.06787, 5.92518)
-
-[node name="enemy_malware" parent="." instance=ExtResource("4_s41y5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.64, 1.46784, 16.008)
-
-[node name="Terminal" parent="." instance=ExtResource("5_ln038")]
+[node name="Terminal" parent="TerminalTracker" instance=ExtResource("5_ln038")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -37.0246, 1.22381, 0)
 
-[node name="Bloatware" parent="." instance=ExtResource("6_8sj02")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.556, 1.41713, 4.50718)
+[node name="Terminal2" parent="TerminalTracker" instance=ExtResource("5_ln038")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -45.1328, 1.10144, -25.4854)
+
+[node name="Terminal3" parent="TerminalTracker" instance=ExtResource("5_ln038")]
+transform = Transform3D(1, 0, 3.49691e-07, 0, 1, 0, -3.49691e-07, 0, 1, -45.0827, 1.18321, -41.5748)
+
+[node name="Terminal4" parent="TerminalTracker" instance=ExtResource("5_ln038")]
+transform = Transform3D(-0.232341, 0, -0.972634, 0, 1, 0, 0.972634, 0, -0.232341, -30.7234, 1.13581, -9.42456)
+
+[node name="Terminal5" parent="TerminalTracker" instance=ExtResource("5_ln038")]
+transform = Transform3D(0.00310823, 0, -0.999996, 0, 1, 0, 0.999996, 0, 0.00310823, 0.90012, 1.15847, -9.41161)
+
+[node name="Terminal6" parent="TerminalTracker" instance=ExtResource("5_ln038")]
+transform = Transform3D(0.99683, 0, 0.0795759, 0, 1, 0, -0.0795759, 0, 0.99683, 10.16, 0.920376, 3.8904)
+
+[node name="Terminal7" parent="TerminalTracker" instance=ExtResource("5_ln038")]
+transform = Transform3D(0.299179, 0, -0.954199, 0, 1, 0, 0.954199, 0, 0.299179, 22.7148, 1.20478, -9.69283)
+
+[node name="Terminal8" parent="TerminalTracker" instance=ExtResource("5_ln038")]
+transform = Transform3D(-0.999977, 0, 0.0071986, 0, 1, 0, -0.0071986, 0, -0.999977, 48.3705, 0.991429, 22.3968)
+
+[node name="Terminal9" parent="TerminalTracker" instance=ExtResource("5_ln038")]
+transform = Transform3D(0.0060102, 0, 0.999991, 0, 1, 0, -0.999991, 0, 0.0060102, -8.33875, 1.09907, 49.1388)
+
+[node name="Terminal10" parent="TerminalTracker" instance=ExtResource("5_ln038")]
+transform = Transform3D(-0.157244, 0, -0.987566, 0, 1, 0, 0.987566, 0, -0.157244, 4.16246, 0.982284, 28.1728)
+
+[node name="Terminal11" parent="TerminalTracker" instance=ExtResource("5_ln038")]
+transform = Transform3D(0.228373, 0, -0.973585, 0, 1, 0, 0.973585, 0, 0.228373, -19.793, 1.13897, 28.7772)
+
+[node name="Terminal12" parent="TerminalTracker" instance=ExtResource("5_ln038")]
+transform = Transform3D(0.0949912, 0, 0.995496, 0, 1, 0, -0.995496, 0, 0.0949912, -38.6672, 1.04157, 49.5086)
+
+[node name="Terminal13" parent="TerminalTracker" instance=ExtResource("5_ln038")]
+transform = Transform3D(0.999913, 0, 0.0157177, 0, 1, 0, -0.0157177, 0, 0.999913, -45.0543, 1.16831, 17.0814)
+
+[node name="Terminal14" parent="TerminalTracker" instance=ExtResource("5_ln038")]
+transform = Transform3D(-0.995137, 0, -0.0985578, 0, 1, 0, 0.0985578, 0, -0.995137, 49.4512, 1.0405, 34.6363)
+
+[node name="Terminal15" parent="TerminalTracker" instance=ExtResource("5_ln038")]
+transform = Transform3D(-0.988293, 0, 0.152631, 0, 1, 0, -0.152631, 0, -0.988293, 49.0316, 1.08956, 46.693)
+
+[node name="Terminal16" parent="TerminalTracker" instance=ExtResource("5_ln038")]
+transform = Transform3D(-0.0150966, 0, 0.999886, 0, 1, 0, -0.999886, 0, -0.0150966, -45.4478, 4.93378, -22.7401)
+
+[node name="Player" parent="." instance=ExtResource("2_5o4qg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.8038, 1.76088, -12.7671)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_ufqbo")
 
 [node name="map" parent="NavigationRegion3D" instance=ExtResource("1_fhuy1")]
 
-[node name="Terminal2" parent="." instance=ExtResource("5_ln038")]
-transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -45.1328, 1.10144, -25.4854)
+[node name="malware" type="Node" parent="."]
 
-[node name="Terminal3" parent="." instance=ExtResource("5_ln038")]
-transform = Transform3D(1, 0, 3.49691e-07, 0, 1, 0, -3.49691e-07, 0, 1, -45.0827, 1.18321, -41.5748)
+[node name="enemy_malware4" parent="malware" instance=ExtResource("4_s41y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.0249, 2.26384, 32.4109)
 
-[node name="Terminal4" parent="." instance=ExtResource("5_ln038")]
-transform = Transform3D(-0.232341, 0, -0.972634, 0, 1, 0, 0.972634, 0, -0.232341, -30.7234, 1.13581, -9.42456)
+[node name="enemy_malware5" parent="malware" instance=ExtResource("4_s41y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.8064, 2.26384, 46.9052)
 
-[node name="Terminal5" parent="." instance=ExtResource("5_ln038")]
-transform = Transform3D(0.00310823, 0, -0.999996, 0, 1, 0, 0.999996, 0, 0.00310823, 0.90012, 1.15847, -9.41161)
+[node name="enemy_malware6" parent="malware" instance=ExtResource("4_s41y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.8855, 2.26384, -1.00439)
 
-[node name="Terminal6" parent="." instance=ExtResource("5_ln038")]
-transform = Transform3D(0.99683, 0, 0.0795759, 0, 1, 0, -0.0795759, 0, 0.99683, 10.16, 0.920376, 3.8904)
+[node name="enemy_malware7" parent="malware" instance=ExtResource("4_s41y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.6671, 2.26384, 13.4899)
 
-[node name="Terminal7" parent="." instance=ExtResource("5_ln038")]
-transform = Transform3D(0.299179, 0, -0.954199, 0, 1, 0, 0.954199, 0, 0.299179, 22.7148, 1.20478, -9.69283)
+[node name="enemy_malware8" parent="malware" instance=ExtResource("4_s41y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.7582, 2.26384, -6.05448)
 
-[node name="Terminal8" parent="." instance=ExtResource("5_ln038")]
-transform = Transform3D(-0.999977, 0, 0.0071986, 0, 1, 0, -0.0071986, 0, -0.999977, 48.3705, 0.991429, 22.3968)
+[node name="enemy_malware9" parent="malware" instance=ExtResource("4_s41y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5397, 2.26384, 8.43985)
 
-[node name="Terminal9" parent="." instance=ExtResource("5_ln038")]
-transform = Transform3D(0.0060102, 0, 0.999991, 0, 1, 0, -0.999991, 0, 0.0060102, -8.33875, 1.09907, 49.1388)
+[node name="enemy_malware3" parent="malware" instance=ExtResource("4_s41y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1973, 2.89518, 45.9906)
 
-[node name="Terminal10" parent="." instance=ExtResource("5_ln038")]
-transform = Transform3D(-0.157244, 0, -0.987566, 0, 1, 0, 0.987566, 0, -0.157244, 4.16246, 0.982284, 28.1728)
+[node name="enemy_malware2" parent="malware" instance=ExtResource("4_s41y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.6782, 2.43615, 32.338)
 
-[node name="Terminal11" parent="." instance=ExtResource("5_ln038")]
-transform = Transform3D(0.228373, 0, -0.973585, 0, 1, 0, 0.973585, 0, 0.228373, -19.793, 1.13897, 28.7772)
+[node name="enemy_malware" parent="malware" instance=ExtResource("4_s41y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.64, 1.46784, 16.008)
 
-[node name="Terminal12" parent="." instance=ExtResource("5_ln038")]
-transform = Transform3D(0.0949912, 0, 0.995496, 0, 1, 0, -0.995496, 0, 0.0949912, -38.6672, 1.04157, 49.5086)
+[node name="enemy_malware10" parent="malware" instance=ExtResource("4_s41y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.2454, 2.26384, 23.6241)
 
-[node name="Terminal13" parent="." instance=ExtResource("5_ln038")]
-transform = Transform3D(0.999913, 0, 0.0157177, 0, 1, 0, -0.0157177, 0, 0.999913, -45.0543, 1.16831, 17.0814)
+[node name="enemy_malware11" parent="malware" instance=ExtResource("4_s41y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.5889, 2.26384, 3.73578)
 
-[node name="Terminal14" parent="." instance=ExtResource("5_ln038")]
-transform = Transform3D(-0.995137, 0, -0.0985578, 0, 1, 0, 0.0985578, 0, -0.995137, 49.4512, 1.0405, 34.6363)
+[node name="enemy_malware12" parent="malware" instance=ExtResource("4_s41y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.5889, 2.26384, -45.2809)
 
-[node name="Terminal15" parent="." instance=ExtResource("5_ln038")]
-transform = Transform3D(-0.988293, 0, 0.152631, 0, 1, 0, -0.152631, 0, -0.988293, 49.0316, 1.08956, 46.693)
+[node name="enemy_malware13" parent="malware" instance=ExtResource("4_s41y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.08539, 1.96888, -45.3617)
+
+[node name="enemy_malware14" parent="malware" instance=ExtResource("4_s41y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.915, 1.96888, -45.3617)
+
+[node name="enemy_malware15" parent="malware" instance=ExtResource("4_s41y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.08539, 1.96888, -18.3358)
+
+[node name="enemy_malware16" parent="malware" instance=ExtResource("4_s41y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.5468, 1.96888, -30.8356)
+
+[node name="enemy_malware17" parent="malware" instance=ExtResource("4_s41y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.3123, 5.3908, -22.6849)
+
+[node name="enemy_malware18" parent="malware" instance=ExtResource("4_s41y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.1374, 5.3908, -22.6849)
+
+[node name="bloatware" type="Node" parent="."]
+
+[node name="Bloatware" parent="bloatware" instance=ExtResource("6_8sj02")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.556, 1.41713, 4.50718)
+
+[node name="Bloatware2" parent="bloatware" instance=ExtResource("6_8sj02")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3766, 1.90884, -2.11773)
+
+[node name="Bloatware3" parent="bloatware" instance=ExtResource("6_8sj02")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.7391, 1.69686, -2.11773)
+
+[node name="Bloatware4" parent="bloatware" instance=ExtResource("6_8sj02")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6725, 2.12075, -29.0063)
+
+[node name="Bloatware5" parent="bloatware" instance=ExtResource("6_8sj02")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.0399, 1.25116, -30.6064)
+
+[node name="Bloatware6" parent="bloatware" instance=ExtResource("6_8sj02")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3766, 1.27547, 39.3251)
+
+[node name="Bloatware7" parent="bloatware" instance=ExtResource("6_8sj02")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.4602, 1.25116, 19.158)
+
+[node name="Bloatware8" parent="bloatware" instance=ExtResource("6_8sj02")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.2244, 1.25116, 10.7001)
+
+[node name="Bloatware9" parent="bloatware" instance=ExtResource("6_8sj02")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.3435, 1.27547, 34.2656)
+
+[node name="Bloatware10" parent="bloatware" instance=ExtResource("6_8sj02")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.3435, 1.27547, 44.3714)
+
+[node name="Bloatware11" parent="bloatware" instance=ExtResource("6_8sj02")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.3435, 1.27547, 2.44029)
+
+[node name="Bloatware12" parent="bloatware" instance=ExtResource("6_8sj02")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.1663, 1.27547, 16.7531)
+
+[node name="Bloatware13" parent="bloatware" instance=ExtResource("6_8sj02")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.555508, 1.27547, -1.53363)
+
+[node name="Bloatware14" parent="bloatware" instance=ExtResource("6_8sj02")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.21733, 0.914166, 8.65738)
