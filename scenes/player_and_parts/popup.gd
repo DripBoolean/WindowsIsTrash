@@ -1,7 +1,6 @@
 extends CanvasGroup
 
 var rng = RandomNumberGenerator.new()
-
 var text_options = ["A New Windows Update Is Available", "Hello!", "You have 2938120941290 unread messages", "You have only -99999999TB of storage left on C:// Drive. You should DIE"]
 
 func _ready():

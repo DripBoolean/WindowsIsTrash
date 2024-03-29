@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dd2qlohuppov"]
+[gd_scene load_steps=6 format=3 uid="uid://dd2qlohuppov"]
 
 [ext_resource type="Script" path="res://scenes/world_parts/terminal.gd" id="1_qdrne"]
+[ext_resource type="AudioStream" uid="uid://3ibr0bxxd0yq" path="res://sounds/Linux Mint LoginStartup Sound.mp3" id="2_8xbfs"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_k33bq"]
 size = Vector3(1, 2, 1)
@@ -33,5 +34,8 @@ omni_attenuation = 4.28709
 
 [node name="CollisionShape" type="CollisionShape3D" parent="ActiveArea"]
 shape = SubResource("SphereShape3D_n6sjv")
+
+[node name="sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_8xbfs")
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

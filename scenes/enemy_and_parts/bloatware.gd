@@ -7,6 +7,7 @@ extends CharacterBody3D
 
 @onready var bloat_body = $model.get_active_material(0)
 @onready var bloat_cloud = $cloud.get_active_material(0)
+@onready var death_particle = preload("res://scenes/enemy_and_parts/malware_death.tscn")
 
 var active = false
 var clockwise = true
@@ -36,6 +37,7 @@ func _physics_process(delta):
 		bloat_cloud.set_shader_parameter("red", bloat_cloud.get_shader_parameter("red") - delta * 1.2)
 	
 	if health <= 0:
+		explode()
 		queue_free()
 		return
 	
@@ -89,6 +91,13 @@ func _physics_process(delta):
 
 
 func take_damage():
+	$sfx.play()
 	bloat_body.set_shader_parameter("red", 1.0);
 	bloat_cloud.set_shader_parameter("red", 1.0);
 	health -= 1
+	
+func explode():
+	var particle = death_particle.instantiate()
+	get_node("/root/Main").add_child(particle)
+	particle.global_position = self.global_position
+	particle.get_child(0).emitting = true

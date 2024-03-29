@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://xkauhl0dd2pd"]
+[gd_scene load_steps=7 format=3 uid="uid://xkauhl0dd2pd"]
 
 [ext_resource type="Script" path="res://scenes/enemy_and_parts/enemy.gd" id="1_045v5"]
 [ext_resource type="Texture2D" uid="uid://box8ao73th7lw" path="res://textures/Bill_Gates_Head_Pixel_Sprite.png" id="2_3bwlm"]
+[ext_resource type="AudioStream" uid="uid://k0yiywyuy1si" path="res://sounds/windows-7-ding-101soundboards.mp3" id="3_3yeqa"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_10bri"]
 albedo_color = Color(1, 0, 1, 1)
@@ -28,5 +29,8 @@ alpha_scissor_threshold = 1.0
 alpha_antialiasing_mode = 2
 texture_filter = 0
 texture = ExtResource("2_3bwlm")
+
+[node name="sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_3yeqa")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
