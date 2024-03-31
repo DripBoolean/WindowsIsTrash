@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://5dfl7lvsdin7"]
 
-[ext_resource type="Material" path="res://shaders/stairs.tres" id="1_dceo7"]
+[ext_resource type="Material" uid="uid://bmbb83exjc35f" path="res://shaders/stairs.tres" id="1_dceo7"]
 
 [node name="stairs" type="Node3D"]
 

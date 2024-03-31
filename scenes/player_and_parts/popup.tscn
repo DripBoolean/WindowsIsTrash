@@ -1,7 +1,15 @@
 [gd_scene load_steps=3 format=3 uid="uid://bbfo83ml3wkg7"]
 
 [ext_resource type="Script" path="res://scenes/player_and_parts/popup.gd" id="1_fcpo7"]
-[ext_resource type="Texture2D" uid="uid://d1ectm4njdlrh" path="res://textures/popups/Delete_Yourself.png" id="2_dl1ro"]
+[ext_resource type="Texture2D" uid="uid://khv3mnq08so7" path="res://textures/icons8-close-96.png" id="2_ndfd4"]
+
+[sub_resource type="Gradient" id="Gradient_sk6rb"]
+colors = PackedColorArray(0.262932, 0.262932, 0.262932, 1, 0.509286, 0.509286, 0.509286, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_yyrqe"]
+gradient = SubResource("Gradient_sk6rb")
+fill_from = Vector2(0.518349, 0)
+fill_to = Vector2(0.522936, 1)
 
 [node name="Popup" type="CanvasGroup"]
 position = Vector2(0, -1)

@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 var camera_rotation = Vector2(0, 0)
-const JUMP_VELOCITY = 10
+const JUMP_VELOCITY = 5
 const SPEED = 1.5
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 const SENSITIVITY = 0.005
@@ -158,8 +158,9 @@ func shoot():
 	new_projectile.position = $Head/hand/gun/gun_hole.global_position
 	$"../".add_child(new_projectile)
 	
-func take_damage(amount = 10):
-	health -= amount
+func take_damage():
+	$hit.play()
+	health -= 10
 	healthbar.health = health
 	
 func infect_adware():
@@ -169,7 +170,7 @@ func infect_adware():
 		var popup = popup_scene.instantiate()
 		add_child(popup)
 	
-	take_damage(1)
+	health -= 1
 	
 
 #func _input(event):
