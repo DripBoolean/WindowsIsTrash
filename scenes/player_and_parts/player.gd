@@ -158,9 +158,9 @@ func shoot():
 	new_projectile.position = $Head/hand/gun/gun_hole.global_position
 	$"../".add_child(new_projectile)
 	
-func take_damage():
+func take_damage(amount = 10):
 	$hit.play()
-	health -= 10
+	health -= amount
 	healthbar.health = health
 	
 func infect_adware():
@@ -170,7 +170,7 @@ func infect_adware():
 		var popup = popup_scene.instantiate()
 		add_child(popup)
 	
-	health -= 1
+	take_damage(1)
 	
 
 #func _input(event):

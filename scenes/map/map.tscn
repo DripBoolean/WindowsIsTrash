@@ -31,6 +31,7 @@ uv1_triplanar = true
 
 [node name="stupid_and_dumb" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.877632, 0.479335, 0, -0.479335, 0.877632, -41.7125, 6.29294, -7.33817)
+light_energy = 0.5
 
 [node name="glass_base" parent="." instance=ExtResource("1_vrxwk")]
 transform = Transform3D(1.51584, 0, 0, 0, 1, 0, 0, 0, 2.23301, -46.1737, 2.55838, -17.6708)
