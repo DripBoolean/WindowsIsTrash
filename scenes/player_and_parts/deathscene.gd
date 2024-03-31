@@ -16,6 +16,10 @@ func _ready():
 func _process(delta):
 	elapsed += delta
 	
+	if progress > 10:
+		if not $Brrr.playing:
+			$Brrr.play()
+	
 	if elapsed > tick_time:
 		elapsed -= tick_time
 		progress += randi_range(0, 40)

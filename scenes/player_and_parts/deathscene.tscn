@@ -41,7 +41,6 @@ text = "0% Complete
 [node name="Brrr" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_vfson")
 volume_db = -15.356
-autoplay = true
 
 [node name="Gates" type="TextureRect" parent="."]
 offset_left = -132.0

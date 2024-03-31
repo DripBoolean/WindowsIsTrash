@@ -21,10 +21,10 @@ func _process(_delta):
 		$Light.light_color = Color(0, 0, rng.randi_range(100, 150))
 
 func activate():
-	$sfx.play()
-	linux_installed = true
-	sprite.texture = linux
-	print("ACTIVE")
+	if not linux_installed:
+		$sfx.play()
+		linux_installed = true
+		sprite.texture = linux
 
 func complete():
 	return linux_installed
