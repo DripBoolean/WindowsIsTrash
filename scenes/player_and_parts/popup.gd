@@ -12,7 +12,6 @@ static func _static_init():
 			var image = load(image_directory + image_path)
 			image_options.append(image)
 			image_size.append(image.get_size())
-			print("Loading image: " + image_path)
 
 func _ready():
 	var image_choice = rng.randi_range(0, len(image_options)) - 1
@@ -20,7 +19,6 @@ func _ready():
 	$TextureRect.size = image_size[image_choice]
 	
 	var own_size = $TextureRect.get_global_rect().size
-	print(own_size)
 	
 	$Button.pressed.connect(self.close)
 	$Button.position = Vector2(own_size.x - $Button.get_global_rect().size.x - 5, 5)

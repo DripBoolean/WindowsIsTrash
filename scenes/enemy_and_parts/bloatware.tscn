@@ -90,13 +90,21 @@ shape = SubResource("CapsuleShape3D_umhig")
 [node name="Eyes" type="Node3D" parent="."]
 
 [node name="LineOfSightRaycast" type="RayCast3D" parent="Eyes"]
-transform = Transform3D(1, 0, 0, 0, -1.31134e-06, -1, 0, 30, -4.37114e-08, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-06, -1, 0, 100, -4.37114e-08, 0, 0, 0)
 collision_mask = 3
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Eyes"]
 transform = Transform3D(0.1, 0, 0, 0, -4.37114e-08, -0.1, 0, 1, -4.37114e-09, 0, 0, -1.50877)
 visible = false
 mesh = SubResource("CylinderMesh_8bk2y")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Eyes"]
+light_energy = 2.28
+shadow_enabled = true
+spot_range = 29.585
+spot_attenuation = 0.901252
+spot_angle = 24.39
+spot_angle_attenuation = 0.466517
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
