@@ -16,9 +16,9 @@ func _ready():
 
 func _process(_delta):
 	if linux_installed:
-		$Light.light_color = Color(0, 200, 0)
+		$Light.light_color = Color(0, 150, 0)
 	else:
-		$Light.light_color = Color(0, 0, rng.randi_range(200, 255))
+		$Light.light_color = Color(0, 0, rng.randi_range(100, 150))
 
 func activate():
 	$sfx.play()

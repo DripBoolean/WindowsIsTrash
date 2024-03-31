@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjfehnd8sfyu"]
+
+[ext_resource type="PackedScene" uid="uid://c74uygsgjtkjg" path="res://models/Terminal_Model.glb" id="1_4mf3m"]
+
+[node name="Terminal_Model" instance=ExtResource("1_4mf3m")]
+
+[node name="keyboard_Mesh1" parent="." index="0"]
+cast_shadow = 0

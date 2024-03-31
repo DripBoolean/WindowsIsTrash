@@ -21,22 +21,13 @@ script = ExtResource("1_qdrne")
 transform = Transform3D(-1.74846e-06, 0, -40, 0, 40, 0, 40, 0, -1.74846e-06, -0.00424153, -0.955351, 0.152078)
 
 [node name="MeshInstance" type="MeshInstance3D" parent="." groups=["activateable"]]
+visible = false
 transparency = 1.0
 cast_shadow = 0
 mesh = SubResource("BoxMesh_k33bq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_n66yp")
-
-[node name="Light" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.605436, 0.649305, 0)
-light_energy = 0.001
-shadow_enabled = true
-shadow_bias = 0.69
-shadow_opacity = 0.54
-distance_fade_enabled = true
-omni_range = 7.506
-omni_attenuation = 4.28709
 
 [node name="SpawnTimer" type="Timer" parent="."]
 
@@ -53,5 +44,12 @@ stream = ExtResource("2_8xbfs")
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(-1.74846e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.74846e-08, 0.266033, 0.400794, 0.155052)
 texture = ExtResource("4_3rvvm")
+
+[node name="Light" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, 0.454386, 0.35758, 0.149393)
+light_energy = 0.001
+shadow_enabled = true
+omni_range = 12.088
+omni_attenuation = 3.24901
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
