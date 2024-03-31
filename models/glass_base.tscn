@@ -19,7 +19,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_t6k8w")
 [node name="Destruction" type="Node" parent="." index="1" node_paths=PackedStringArray("shard_container")]
 script = ExtResource("2_hs308")
 fragmented = ExtResource("3_mt2ug")
-shard_container = NodePath("../..")
+shard_container = NodePath("")
 
 [node name="glass_man" type="CharacterBody3D" parent="." index="2" groups=["glass"]]
 collision_layer = 3
