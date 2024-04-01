@@ -3,6 +3,7 @@ extends ProgressBar
 @onready var timer = $Timer
 @onready var dmg = $damagebar
 @onready var port = $player_image
+@onready var face = $player_face
 
 # HEALTH SHAKE
 @export var trauma_reduction_rate = 1.0
@@ -22,7 +23,8 @@ func _set_health(new_health):
 	health = min(max_value, new_health)
 	value = health
 	trauma = 2.5
-	port.set_color(Color(1.0, 0.0, 0.0, 1.0))
+	port.set_color(Color(1.0, 0.0, 0.0, 0.5))
+	face.modulate = Color(1.0, 0.0, 0.0, 1.0)
 	
 	if health <= 0:
 		queue_free()
@@ -53,9 +55,11 @@ func init_health(_health):
 	dmg.max_value = health
 	dmg.value = health
 	trauma = 0.0
-	port.set_color(Color(0.0, 1.0, 0.0, 1.0))
+	port.set_color(Color(0.0, 1.0, 0.0, 0.5))
+	face.modulate = Color(1.0,1.0,1.0,1.0)
 
 func _on_timer_timeout():
 	dmg.value = health
 	trauma = 0.0
-	port.set_color(Color(0.0, 1.0, 0.0, 1.0))
+	port.set_color(Color(0.0, 1.0, 0.0, 0.5))
+	face.modulate = Color(1.0,1.0,1.0,1.0)
